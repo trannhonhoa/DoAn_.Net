@@ -1,0 +1,9 @@
+E:\do an c#\GUI\BLL\bin\Debug\BLL.dll
+E:\do an c#\GUI\BLL\bin\Debug\BLL.pdb
+E:\do an c#\GUI\BLL\bin\Debug\DAL.dll
+E:\do an c#\GUI\BLL\bin\Debug\DTO.dll
+E:\do an c#\GUI\BLL\bin\Debug\DAL.pdb
+E:\do an c#\GUI\BLL\bin\Debug\DTO.pdb
+E:\do an c#\GUI\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+E:\do an c#\GUI\BLL\obj\Debug\BLL.dll
+E:\do an c#\GUI\BLL\obj\Debug\BLL.pdb
