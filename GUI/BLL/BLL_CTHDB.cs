@@ -28,7 +28,11 @@ namespace BLL
         //  LẤY DỮ LIỆU
         public DataTable GetData(string Condition)
         {
-            return sql.GetData(Condition);
+            return sql.CheckValue(Condition);
+        }
+        public DataTable CheckValue(CTHDB ex)
+        {
+            return sql.CheckValue("Where masp = '"+ex.MaSP+"' and mahd = '"+ex.MaHD+"'");
         }
     }
 }

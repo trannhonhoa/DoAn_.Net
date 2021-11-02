@@ -39,5 +39,17 @@ namespace DAL
         {
             return db.GetData("Select * from SANPHAM where MaSP = N'" + Condition + "'");
         }
+        public string GetSL(string Condition)
+        {
+            return db.GetDataText("Select SLTon from SANPHAM " + Condition);
+        }
+        public string GetDonGia (string Condition)
+        {
+            return db.GetDataText("Select GiaNhap from SANPHAM " + Condition);
+        }
+        public void UpdateSL(SanPham ex){
+            db.ExcuteReaderData("UPDATE SANPHAM SET SLTon = SLTon - '" + ex.SLTon + "' where masp='" +ex.MaSP  + "'");
+        }
+      
     }
 }

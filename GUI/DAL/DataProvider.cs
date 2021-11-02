@@ -65,6 +65,7 @@ namespace DAL
 
                 throw;
             }
+            CloseConnection();
 
         }
         public void ExcuteReaderData(String sql, SqlParameter[] parameters)
@@ -86,7 +87,19 @@ namespace DAL
             }
             CloseConnection();
         }
-
+        public string GetDataText(string sql)
+        {
+            string ketqua = "";
+            OpenConnection();
+            SqlCommand command = new SqlCommand(sql, conn);
+            SqlDataReader sqldr = command.ExecuteReader();
+            while (sqldr.Read())
+            {
+                ketqua = sqldr[0].ToString();
+            }
+            CloseConnection();
+            return ketqua;
+        }
        
     }
 }

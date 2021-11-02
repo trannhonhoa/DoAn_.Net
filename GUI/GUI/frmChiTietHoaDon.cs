@@ -19,10 +19,15 @@ namespace QuanLyCuaHangDienThoai
         }
         BLL_CTHDB bllcthd = new BLL_CTHDB();
         BLL_SanPham bllsp = new BLL_SanPham();
+        CTHDB cthdb = new CTHDB();
+        SanPham sp = new SanPham();
         public string SoHD { get; set; }
+        bool flagCheck;
+        int pos = -1;
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)
         {
             LoadDefault();
+            LoadCTHDB();
         }
         private void DisableElemnts()
         {
@@ -35,22 +40,23 @@ namespace QuanLyCuaHangDienThoai
             cmbMaSP.Enabled = false;
             txtSoLuong.Enabled = false;
             txtDonGia.Enabled = false;
+            txtThanhTien.Enabled = false;
         }
         private void EnbleElements()
         {
             btnThemMoi.Enabled = false;
             btnLuu.Enabled = true;
             btnHuy.Enabled = true;
-            cmbSoHD.Enabled = true;
+            cmbSoHD.Enabled = false;
             cmbMaSP.Enabled = true;
             txtSoLuong.Enabled = true;
-            txtDonGia.Enabled = true;
+            
         }
         
         private void Resettext()
         {
             txtSoLuong.ResetText();
-            cmbSoHD.SelectedIndex = 0;
+            cmbSoHD.Text = SoHD;
             cmbMaSP.SelectedIndex = 0;
             txtDonGia.ResetText();
             txtThanhTien.ResetText();
@@ -58,9 +64,12 @@ namespace QuanLyCuaHangDienThoai
         private void LoadDefault()
         {
             DisableElemnts();
-            cmbMaSP.DataSource = bllsp.GetData("");
+            cmbMaSP.DataSource = bllsp.GetData("where SLTon > 0");
             cmbMaSP.DisplayMember = "tensp";
             cmbMaSP.ValueMember = "masp";
+
+            cmbSoHD.Text = SoHD;
+            cmbMaSP.SelectedIndex = 0;
         }
 
         private void AfterClickCell()
@@ -75,17 +84,133 @@ namespace QuanLyCuaHangDienThoai
         private void LoadCTHDB()
         {
             dgCTHDB.DataSource = bllcthd.GetData("where mahd = N'"+SoHD+"' ");
+            if (dgCTHDB.Rows.Count <= 0) return;
             dgCTHDB.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dgCTHDB.Columns[0].HeaderText = "Số HDB";
             dgCTHDB.Columns[0].Frozen = true;
             dgCTHDB.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgCTHDB.Columns[0].Width = 100;
-            dgCTHDB.Columns[1].HeaderText = "Mã Hàng";
-            dgCTHDB.Columns[1].Width = 100;
+            dgCTHDB.Columns[0].Width = 150;
+            dgCTHDB.Columns[1].HeaderText = "Mã Sản Phẩm";
+            dgCTHDB.Columns[1].Width = 150;
             dgCTHDB.Columns[2].HeaderText = "Số Lượng";
-            dgCTHDB.Columns[2].Width = 80;
+            dgCTHDB.Columns[2].Width = 150;
+            dgCTHDB.Columns[3].HeaderText = "Giá Bán";
+            dgCTHDB.Columns[3].Width = 150;
             dgCTHDB.Columns[4].HeaderText = "Thành Tiền";
-            dgCTHDB.Columns[4].Width = 80;
+            dgCTHDB.Columns[4].Width = 150;
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+            EnbleElements();
+            flagCheck = true;
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            btnLuu.Enabled = true;
+            flagCheck = false;
+
+            EnbleElements();
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (pos == -1) return;
+            DataRow row = (dgCTHDB.Rows[pos].DataBoundItem as DataRowView).Row;
+
+            cthdb.MaSP = row[1].ToString();
+            try
+            {
+                
+                bllcthd.DeleteData(cthdb);
+                MessageBox.Show("Xóa Thành Công", "Thông báo");
+                LoadCTHDB();
+                pos = -1;
+                Resettext();
+                DisableElemnts();
+            }
+            catch (Exception)
+            {
+
+                MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+            }
+        }
+
+        private void dgCTHDB_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pos = e.RowIndex;
+            if (pos == -1) { return; }
+            AfterClickCell();
+            DataRow row = (dgCTHDB.Rows[pos].DataBoundItem as DataRowView).Row;
+            cmbSoHD.Text = row[0].ToString();
+            cmbMaSP.SelectedValue = row[1].ToString();
+            txtSoLuong.Text = row[2].ToString();
+            txtDonGia.Text = row[3].ToString();
+            txtThanhTien.Text = row[4].ToString();
+        }
+
+        private void btnLuu_Click(object sender, EventArgs e)
+        {
+            if (txtSoLuong.Text == "" || int.Parse(txtSoLuong.Text) <= 0)
+            {
+                MessageBox.Show("Hãy nhập số lượng", "Thông báo"); return;
+            }
+            int tongtien = int.Parse(txtSoLuong.Text) * int.Parse(txtDonGia.Text);
+            cthdb.MaHD = cmbSoHD.Text;
+            cthdb.MaSP = cmbMaSP.SelectedValue.ToString();
+            cthdb.SLBan = int.Parse(txtSoLuong.Text);
+            cthdb.DonGiaBan = int.Parse(txtDonGia.Text);
+            cthdb.ThanhTienBan = tongtien;
+            int SLTon = int.Parse(bllsp.GetSL("where masp = '" + cthdb.MaSP + "'"));
+            if (cthdb.SLBan > SLTon)
+            {
+                MessageBox.Show("Không đủ số lượng bán", "Thông báo"); return;
+            }
+            if (flagCheck)
+            {
+                try
+                {
+                    if (bllcthd.CheckValue(cthdb) != null)
+                    {
+                        MessageBox.Show("Sản phẩm đã tồn tại", "Thông báo"); return;
+                    }
+                    bllcthd.AddData(cthdb);
+                    MessageBox.Show("Thêm thành công", "Thông báo");
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Lỗi! Không thêm được", "Thông báo");
+                }
+            }
+            else
+            {
+                try
+                {
+                    bllcthd.EditData(cthdb);
+                    MessageBox.Show("Sửa thành công", "Thông báo");
+
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Lỗi! Không sửa được", "Thông báo");
+                }
+            }
+            sp.SLTon = cthdb.SLBan;
+            sp.MaSP = cthdb.MaSP;
+            bllsp.UpdateSL(sp);
+            pos = -1;
+            Resettext();
+            LoadCTHDB();
+        }
+
+        private void cmbMaSP_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            txtDonGia.Text = bllsp.GetSL("where masp = '"+cmbMaSP.SelectedValue.ToString()+"'");
+            txtSoLuong.Text = bllsp.GetSL("where masp = '" + cmbMaSP.SelectedValue.ToString() + "'");
         }
 
     }

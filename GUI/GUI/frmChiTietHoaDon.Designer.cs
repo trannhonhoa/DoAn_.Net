@@ -43,6 +43,7 @@
             this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnHuy = new System.Windows.Forms.Button();
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.label8 = new System.Windows.Forms.Label();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
@@ -50,7 +51,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnHuy = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCTHDB)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -67,6 +67,7 @@
             this.dgCTHDB.Name = "dgCTHDB";
             this.dgCTHDB.Size = new System.Drawing.Size(850, 341);
             this.dgCTHDB.TabIndex = 29;
+            this.dgCTHDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCTHDB_CellClick);
             // 
             // btnSua
             // 
@@ -80,6 +81,7 @@
             this.btnSua.Text = "Sửa";
             this.btnSua.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSua.UseVisualStyleBackColor = true;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnLuu
             // 
@@ -93,6 +95,7 @@
             this.btnLuu.Text = "Lưu";
             this.btnLuu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuu.UseVisualStyleBackColor = true;
+            this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
             // 
             // label2
             // 
@@ -123,8 +126,9 @@
             this.cmbMaSP.FormattingEnabled = true;
             this.cmbMaSP.Location = new System.Drawing.Point(501, 6);
             this.cmbMaSP.Name = "cmbMaSP";
-            this.cmbMaSP.Size = new System.Drawing.Size(108, 27);
+            this.cmbMaSP.Size = new System.Drawing.Size(209, 27);
             this.cmbMaSP.TabIndex = 14;
+            this.cmbMaSP.SelectedIndexChanged += new System.EventHandler(this.cmbMaSP_SelectedIndexChanged);
             // 
             // label6
             // 
@@ -142,7 +146,7 @@
             this.lbhang.Anchor = System.Windows.Forms.AnchorStyles.None;
             this.lbhang.AutoSize = true;
             this.lbhang.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbhang.Location = new System.Drawing.Point(615, 9);
+            this.lbhang.Location = new System.Drawing.Point(716, 9);
             this.lbhang.Name = "lbhang";
             this.lbhang.Size = new System.Drawing.Size(27, 19);
             this.lbhang.TabIndex = 10;
@@ -217,6 +221,7 @@
             this.btnXoa.Text = "Xóa";
             this.btnXoa.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnXoa.UseVisualStyleBackColor = true;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // panel2
             // 
@@ -234,6 +239,19 @@
             this.panel2.Size = new System.Drawing.Size(850, 55);
             this.panel2.TabIndex = 28;
             // 
+            // btnHuy
+            // 
+            this.btnHuy.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnHuy.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._48px_Crystal_Clear_action_stop;
+            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHuy.Location = new System.Drawing.Point(564, 0);
+            this.btnHuy.Name = "btnHuy";
+            this.btnHuy.Size = new System.Drawing.Size(98, 55);
+            this.btnHuy.TabIndex = 6;
+            this.btnHuy.Text = "Hủy";
+            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnHuy.UseVisualStyleBackColor = true;
+            // 
             // btnThemMoi
             // 
             this.btnThemMoi.Dock = System.Windows.Forms.DockStyle.Left;
@@ -246,6 +264,7 @@
             this.btnThemMoi.Text = "Thêm Mới";
             this.btnThemMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemMoi.UseVisualStyleBackColor = true;
+            this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // label8
             // 
@@ -319,19 +338,6 @@
             this.panel1.Size = new System.Drawing.Size(850, 50);
             this.panel1.TabIndex = 26;
             // 
-            // btnHuy
-            // 
-            this.btnHuy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnHuy.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._48px_Crystal_Clear_action_stop;
-            this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(564, 0);
-            this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(98, 55);
-            this.btnHuy.TabIndex = 6;
-            this.btnHuy.Text = "Hủy";
-            this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnHuy.UseVisualStyleBackColor = true;
-            // 
             // frmChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -342,7 +348,7 @@
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmChiTietHoaDon";
             this.Text = "frmChiTietHoaDon";
             this.Load += new System.EventHandler(this.frmChiTietHoaDon_Load);

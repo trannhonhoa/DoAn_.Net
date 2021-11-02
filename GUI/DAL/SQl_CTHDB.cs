@@ -18,15 +18,19 @@ namespace DAL
         //  SỬA DỮ LIỆU
         public void EditData(CTHDB ex)
         {
-            cn.ExcuteReaderData(@"UPDATE CHITIETHDBAN SET SLBan =N'" + ex.SLBan + "', DonGiaBan =N'" + ex.DonGiaBan + "', ThanhTienBan =N'" + ex.ThanhTienBan + "' Where MaHD=N'" + ex.MaHD + "'");
+            cn.ExcuteReaderData(@"UPDATE CHITIETHDBAN SET SLBan =N'" + ex.SLBan + "', DonGiaBan =N'" + ex.DonGiaBan + "', ThanhTienBan =N'" + ex.ThanhTienBan + "' Where MaSP=N'" + ex.MaSP + "'");
         }
         //  XÓA DỮ LIỆU
         public void DeleteData(CTHDB ex)
         {
-            cn.ExcuteReaderData(@"DELETE FROM CHITIETHDBAN Where MaHD=N'" + ex.MaHD + "'");
+            cn.ExcuteReaderData(@"DELETE FROM CHITIETHDBAN Where MaSP=N'" + ex.MaSP + "'");
         }
         //  LẤY DỮ LIỆU
         public DataTable GetData(string Condition)
+        {
+            return cn.GetData("Select * from CHITIETHDBAN " + Condition);
+        }
+        public DataTable CheckValue(string Condition)
         {
             return cn.GetData("Select * from CHITIETHDBAN " + Condition);
         }

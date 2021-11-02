@@ -164,6 +164,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            if (pos == -1) return;
             DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
            
             hdb.MaHD = row[0].ToString();
