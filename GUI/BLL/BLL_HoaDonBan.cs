@@ -30,5 +30,9 @@ namespace BLL
         {
             return sql.GetData(Condition);
         }
+        public void TongTien(HoaDonBan ex)
+        {
+            sql.TongTien(ex);
+        }
     }
 }

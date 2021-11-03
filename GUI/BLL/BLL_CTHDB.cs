@@ -34,5 +34,9 @@ namespace BLL
         {
             return sql.CheckValue("Where masp = '"+ex.MaSP+"' and mahd = '"+ex.MaHD+"'");
         }
+        public void DeleteAllData(CTHDB ex)
+        {
+            sql.DeleteAllData(ex);
+        }
     }
 }

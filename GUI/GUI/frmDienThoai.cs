@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using System.IO;
 namespace QuanLyCuaHangDienThoai
 {
     public partial class frmDienThoai : Form
@@ -27,7 +28,9 @@ namespace QuanLyCuaHangDienThoai
         BLL_SanPham bllsp = new BLL_SanPham();
         BLL_NhaCungCap bllncc = new BLL_NhaCungCap();
         BLL_NhomSanPham bllnsp = new BLL_NhomSanPham();
-      
+        BLL_CTHDB bllcthd = new BLL_CTHDB();
+        SanPham sp = new SanPham();
+        CTHDB cthd = new CTHDB();
         private void DisableElemnts(){
             btnThemMoi.Enabled = true;
             btnLuu.Enabled = false;
@@ -118,6 +121,8 @@ namespace QuanLyCuaHangDienThoai
             dgSanPham.Columns["mancc"].Width = 100;
             dgSanPham.Columns["mancc"].Visible = true;
 
+            
+
         }
         bool flagCheck;
         int pos = -1;
@@ -171,8 +176,6 @@ namespace QuanLyCuaHangDienThoai
             {
                 MessageBox.Show("Giá nhập phải là số"); return;
             }
-
-            SanPham sp = new SanPham();
             sp.MaSP = txtMaSanPham.Text;
             sp.TenSP = txtTenSanPham.Text;
             sp.DonViTinh = txtDonViTinh.Text;
@@ -181,9 +184,10 @@ namespace QuanLyCuaHangDienThoai
             sp.GiaNhap = gianhap;
             sp.MaNhom = cmbNhom.SelectedValue.ToString();
             sp.MaNCC = cmbNCC.SelectedValue.ToString();
+
             if (flagCheck)
             {
-                if (bllsp.CheckValue(sp) != null)
+                if (bllsp.GetData("where masp = '"+sp.MaSP+"'") != null)
                 {
                     MessageBox.Show("Sản phẩm đã tồn tại", "Thông báo"); return;
                 }
@@ -229,6 +233,8 @@ namespace QuanLyCuaHangDienThoai
             DisableElemnts();
             pos = -1;
             btnThemMoi.Enabled = true;
+            LoadSanPham();
+            
         }
 
         private void dgSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -245,6 +251,7 @@ namespace QuanLyCuaHangDienThoai
             txtGiaNhap.Text = row[5].ToString();
             txtGiaBan.Text = row[6].ToString();
             cmbNCC.SelectedValue = row[7].ToString();
+            
         }
        
         private void dgSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -272,26 +279,63 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (pos == -1) { return; }
-            AfterClickCell();
-            DataRow row = (dgSanPham.Rows[pos].DataBoundItem as DataRowView).Row;
-            SanPham sp = new SanPham();
-            sp.MaSP = row[0].ToString();
+            if (pos == -1) { return; } 
+            DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa ?","Cho suy nghĩ lại lần nữa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if(ret == DialogResult.Yes){
+                AfterClickCell();
+                DataRow row = (dgSanPham.Rows[pos].DataBoundItem as DataRowView).Row;
+                SanPham sp = new SanPham();
+                sp.MaSP = row[0].ToString();
+                try
+                {
+                    cthd.MaSP = sp.MaSP;
+                    bllcthd.DeleteAllData(cthd);
+                    bllsp.DeleteData(sp);
+                    MessageBox.Show("Xóa Thành Công", "Thông báo");
+                    LoadSanPham();
+                    pos = -1;
+                    Resettext();
+                    DisableElemnts();
+                }
+                catch (Exception)
+                {
+
+                    MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+                }
+            }
+            
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Hãy nhập tên sản phẩm cần tìm", "Thông báo"); return;
+            }
             try
             {
-               
-                bllsp.DeleteData(sp);
-                MessageBox.Show("Xóa Thành Công", "Thông báo");
-                LoadSanPham();
-                pos = -1;
-                Resettext();
-                DisableElemnts();
+                sp.TenSP = txtTimKiem.Text.Trim();
+                DataTable dt = bllsp.GetData("where tensp like '" + sp.TenSP + "%'");
+                if(dt == null){
+                    MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo"); return;
+                }
+                dgSanPham.DataSource = dt;
             }
             catch (Exception)
             {
-
-                MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+                
+                throw;
             }
+            btnHuy.Enabled = true;
+           
         }
+
+        private void gb1_Enter(object sender, EventArgs e)
+        {
+
+        }
+        
+
+        
     }
 }

@@ -74,17 +74,21 @@ namespace QuanLyCuaHangDienThoai
         private void LoadKhacHang()
         {
             dgKhachHang.DataSource = bllkh.GetData("");
-            dgKhachHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgKhachHang.Columns[0].HeaderText = "Mã KH";
-            dgKhachHang.Columns[0].Frozen = true;
-            dgKhachHang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgKhachHang.Columns[0].Width = 100;
-            dgKhachHang.Columns[1].HeaderText = "Tên KH";
-            dgKhachHang.Columns[1].Width = 300;
-            dgKhachHang.Columns[2].HeaderText = "Địa Chỉ";
-            dgKhachHang.Columns[2].Width = 300;
-            dgKhachHang.Columns[3].HeaderText = "Điện Thoại";
-            dgKhachHang.Columns[3].Width = 300;
+            if (dgKhachHang.Rows.Count > 0)
+            {
+                dgKhachHang.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgKhachHang.Columns[0].HeaderText = "Mã KH";
+                dgKhachHang.Columns[0].Frozen = true;
+                dgKhachHang.Columns[0].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgKhachHang.Columns[0].Width = 100;
+                dgKhachHang.Columns[1].HeaderText = "Tên KH";
+                dgKhachHang.Columns[1].Width = 300;
+                dgKhachHang.Columns[2].HeaderText = "Địa Chỉ";
+                dgKhachHang.Columns[2].Width = 300;
+                dgKhachHang.Columns[3].HeaderText = "Điện Thoại";
+                dgKhachHang.Columns[3].Width = 300;
+            }
+            
         }
 
         private void dgKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -128,9 +132,10 @@ namespace QuanLyCuaHangDienThoai
             kh.SDTKH = txtDienThoai.Text;
             if (flagCheck)
             {
-                if (bllkh.CheckValue(kh) != null)
+
+                if (bllkh.GetData("where makh = '"+kh.MaKH+"'") != null)
                 {
-                    MessageBox.Show("Khách Hàng đã tồn tại", "Thông báo");
+                    MessageBox.Show("Khách Hàng đã tồn tại", "Thông báo"); return;
                 }
                 else
                 {
@@ -180,6 +185,7 @@ namespace QuanLyCuaHangDienThoai
             DisableElemnts();
             pos = -1;
             btnThemMoi.Enabled = true;
+            LoadKhacHang();
         }
         private void btxoa_Click(object sender, EventArgs e)
         {
@@ -201,6 +207,30 @@ namespace QuanLyCuaHangDienThoai
 
                 MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
             }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Hãy nhập tên sản phẩm cần tìm", "Thông báo"); return;
+            }
+            try
+            {
+                kh.TenKH = txtTimKiem.Text.Trim();
+                DataTable dt = bllkh.GetData("where tenkh like '" + kh.TenKH + "%'");
+                if (dt == null)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng", "Thông báo"); return;
+                }
+                dgKhachHang.DataSource = dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            btnHuy.Enabled = true;
         }
     }
 }

@@ -32,8 +32,11 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=11.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -44,6 +47,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataSetHoaDonBan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetHoaDonBan.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetKhoHang.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetKhoHang.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetSanPhamDaBan.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetSanPhamDaBan.xsd</DependentUpon>
+    </Compile>
     <Compile Include="frmChiTietHoaDon.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -62,6 +80,12 @@
     <Compile Include="frmKhachHang.Designer.cs">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMain.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -74,8 +98,26 @@
     <Compile Include="frmHoaDonBan.Designer.cs">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSanPhamDaBan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSanPhamDaBan.Designer.cs">
+      <DependentUpon>frmSanPhamDaBan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="frmThongKeKhoHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmThongKeKhoHang.Designer.cs">
+      <DependentUpon>frmThongKeKhoHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="frmReportHDB.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmReportHDB.Designer.cs">
+      <DependentUpon>frmReportHDB.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="frmChiTietHoaDon.resx">
       <DependentUpon>frmChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -85,11 +127,20 @@
     <EmbeddedResource Include="frmKhachHang.resx">
       <DependentUpon>frmKhachHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMain.resx">
       <DependentUpon>frmMain.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmHoaDonBan.resx">
       <DependentUpon>frmHoaDonBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSanPhamDaBan.resx">
+      <DependentUpon>frmSanPhamDaBan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmThongKeKhoHang.resx">
+      <DependentUpon>frmThongKeKhoHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -101,6 +152,45 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="frmReportHDB.resx">
+      <DependentUpon>frmReportHDB.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportHDB.rdlc" />
+    <EmbeddedResource Include="ReportKhoHang.rdlc" />
+    <EmbeddedResource Include="ReportSanPhamDaBan.rdlc" />
+    <None Include="DataSetHoaDonBan.xsc">
+      <DependentUpon>DataSetHoaDonBan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetHoaDonBan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetHoaDonBan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetHoaDonBan.xss">
+      <DependentUpon>DataSetHoaDonBan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKhoHang.xsc">
+      <DependentUpon>DataSetKhoHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetKhoHang.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetKhoHang.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetKhoHang.xss">
+      <DependentUpon>DataSetKhoHang.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSanPhamDaBan.xsc">
+      <DependentUpon>DataSetSanPhamDaBan.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetSanPhamDaBan.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetSanPhamDaBan.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetSanPhamDaBan.xss">
+      <DependentUpon>DataSetSanPhamDaBan.xsd</DependentUpon>
+    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -210,6 +300,39 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\wp2848527.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1439854729_DeleteRed.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\48px-Crystal_Clear_action_exit.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1437482150_corbeille box sale.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\wp28485271.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\1437482686_sale-pointer.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thanh toan.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

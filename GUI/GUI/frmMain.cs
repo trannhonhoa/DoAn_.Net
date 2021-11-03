@@ -40,5 +40,24 @@ namespace QuanLyCuaHangDienThoai
             frmHoaDonBan fr = new frmHoaDonBan();
             fr.Show();
         }
+
+        private void khoHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmThongKeKhoHang fr = new frmThongKeKhoHang();
+            fr.Show();
+        }
+
+        private void sảnPhẩmĐãBánToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSanPhamDaBan fr = new frmSanPhamDaBan();
+            fr.Show();
+        }
+
+        private void đăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLogin fr = new frmLogin();
+            this.Hide();
+            fr.Show();
+        }
     }
 }

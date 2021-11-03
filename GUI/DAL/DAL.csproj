@@ -44,6 +44,7 @@
     <Compile Include="SQl_CTHDB.cs" />
     <Compile Include="SQL_HoaDonBan.cs" />
     <Compile Include="SQL_KhachHang.cs" />
+    <Compile Include="SQL_Login.cs" />
     <Compile Include="SQL_NhaCungCap.cs" />
     <Compile Include="SQL_NhanVien.cs" />
     <Compile Include="SQL_NhomSanPham.cs" />

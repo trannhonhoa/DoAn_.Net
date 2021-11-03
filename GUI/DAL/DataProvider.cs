@@ -5,11 +5,12 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Data;
+using DTO;
 namespace DAL
 {
     public class DataProvider
     {
-        private SqlConnection conn = null;
+        public SqlConnection conn = null;
         string strConn = "Server=DESKTOP-P9L00KA; Database=CuaHangDienThoai; User Id=sa; pwd=trannhonhoa";
         public void OpenConnection()
         {
@@ -67,25 +68,6 @@ namespace DAL
             }
             CloseConnection();
 
-        }
-        public void ExcuteReaderData(String sql, SqlParameter[] parameters)
-        {
-            try
-            {
-                OpenConnection();
-                SqlCommand command = new SqlCommand(sql, conn);
-                for (int i = 0; i < parameters.Length; i++)
-                {
-                    command.Parameters.Add(parameters[i]);
-                }
-                command.ExecuteNonQuery();
-            }
-            catch (Exception)
-            {
-
-                throw;
-            }
-            CloseConnection();
         }
         public string GetDataText(string sql)
         {

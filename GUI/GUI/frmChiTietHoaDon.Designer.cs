@@ -40,7 +40,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtDonGia = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnQuayLai = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.btnHuy = new System.Windows.Forms.Button();
@@ -51,6 +50,7 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.btnQuayLai = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgCTHDB)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -73,8 +73,9 @@
             // 
             this.btnSua.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnSua.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._2Sua;
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(220, 0);
+            this.btnSua.Location = new System.Drawing.Point(222, 0);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(87, 55);
             this.btnSua.TabIndex = 2;
@@ -87,8 +88,9 @@
             // 
             this.btnLuu.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnLuu.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLuu.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.Luu;
             this.btnLuu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnLuu.Location = new System.Drawing.Point(129, 0);
+            this.btnLuu.Location = new System.Drawing.Point(131, 0);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(91, 55);
             this.btnLuu.TabIndex = 1;
@@ -137,9 +139,9 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(412, 9);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(52, 19);
+            this.label6.Size = new System.Drawing.Size(75, 19);
             this.label6.TabIndex = 11;
-            this.label6.Text = "Mã Sp";
+            this.label6.Text = "Sản Phẩm";
             // 
             // lbhang
             // 
@@ -187,34 +189,24 @@
             // 
             this.button1.Dock = System.Windows.Forms.DockStyle.Left;
             this.button1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.invoice;
             this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(495, 0);
+            this.button1.Location = new System.Drawing.Point(399, 0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(69, 55);
+            this.button1.Size = new System.Drawing.Size(150, 55);
             this.button1.TabIndex = 5;
             this.button1.Text = "Xuất Hóa Đơn";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.button1.UseVisualStyleBackColor = true;
-            // 
-            // btnQuayLai
-            // 
-            this.btnQuayLai.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnQuayLai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnQuayLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnQuayLai.Location = new System.Drawing.Point(397, 0);
-            this.btnQuayLai.Name = "btnQuayLai";
-            this.btnQuayLai.Size = new System.Drawing.Size(98, 55);
-            this.btnQuayLai.TabIndex = 4;
-            this.btnQuayLai.Text = "Quay Loại Giao Diện \r\nHóa Đơn";
-            this.btnQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // btnXoa
             // 
             this.btnXoa.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnXoa.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._3Xoa;
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(307, 0);
+            this.btnXoa.Location = new System.Drawing.Point(309, 0);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(90, 55);
             this.btnXoa.TabIndex = 3;
@@ -228,7 +220,6 @@
             this.panel2.BackColor = System.Drawing.SystemColors.Control;
             this.panel2.Controls.Add(this.btnHuy);
             this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.btnQuayLai);
             this.panel2.Controls.Add(this.btnXoa);
             this.panel2.Controls.Add(this.btnSua);
             this.panel2.Controls.Add(this.btnLuu);
@@ -242,24 +233,26 @@
             // btnHuy
             // 
             this.btnHuy.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnHuy.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._48px_Crystal_Clear_action_stop;
+            this.btnHuy.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._1439854729_DeleteRed;
             this.btnHuy.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnHuy.Location = new System.Drawing.Point(564, 0);
+            this.btnHuy.Location = new System.Drawing.Point(549, 0);
             this.btnHuy.Name = "btnHuy";
-            this.btnHuy.Size = new System.Drawing.Size(98, 55);
+            this.btnHuy.Size = new System.Drawing.Size(87, 55);
             this.btnHuy.TabIndex = 6;
             this.btnHuy.Text = "Hủy";
             this.btnHuy.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuy.UseVisualStyleBackColor = true;
+            this.btnHuy.Click += new System.EventHandler(this.btnHuy_Click);
             // 
             // btnThemMoi
             // 
             this.btnThemMoi.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnThemMoi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThemMoi.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._1Them;
             this.btnThemMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThemMoi.Location = new System.Drawing.Point(0, 0);
             this.btnThemMoi.Name = "btnThemMoi";
-            this.btnThemMoi.Size = new System.Drawing.Size(129, 55);
+            this.btnThemMoi.Size = new System.Drawing.Size(131, 55);
             this.btnThemMoi.TabIndex = 0;
             this.btnThemMoi.Text = "Thêm Mới";
             this.btnThemMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -331,12 +324,27 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.Controls.Add(this.btnQuayLai);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(850, 50);
             this.panel1.TabIndex = 26;
+            // 
+            // btnQuayLai
+            // 
+            this.btnQuayLai.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnQuayLai.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnQuayLai.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.undo__3_;
+            this.btnQuayLai.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnQuayLai.Location = new System.Drawing.Point(0, 0);
+            this.btnQuayLai.Name = "btnQuayLai";
+            this.btnQuayLai.Size = new System.Drawing.Size(43, 50);
+            this.btnQuayLai.TabIndex = 5;
+            this.btnQuayLai.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnQuayLai.UseVisualStyleBackColor = true;
+            this.btnQuayLai.Click += new System.EventHandler(this.btnQuayLai_Click_1);
             // 
             // frmChiTietHoaDon
             // 
@@ -376,7 +384,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox txtDonGia;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button btnQuayLai;
         private System.Windows.Forms.Button btnXoa;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Button btnThemMoi;
@@ -387,5 +394,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Button btnHuy;
+        private System.Windows.Forms.Button btnQuayLai;
     }
 }

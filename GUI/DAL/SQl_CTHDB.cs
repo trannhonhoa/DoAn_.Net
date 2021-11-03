@@ -34,5 +34,9 @@ namespace DAL
         {
             return cn.GetData("Select * from CHITIETHDBAN " + Condition);
         }
+        public void DeleteAllData(CTHDB ex)
+        {
+            cn.ExcuteReaderData(@"Delete from CHITIETHDBAN where mahd = '" + ex.MaHD + "'");
+        }
     }
 }

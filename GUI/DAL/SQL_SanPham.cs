@@ -37,7 +37,7 @@ namespace DAL
         }
         public DataTable CheckValue(string Condition)
         {
-            return db.GetData("Select * from SANPHAM where MaSP = N'" + Condition + "'");
+            return db.GetData("Select * from SANPHAM where MaSP = '" + Condition + "'");
         }
         public string GetSL(string Condition)
         {

@@ -30,5 +30,11 @@ namespace DAL
         {
             return db.GetData("Select * from HOADONBAN " + Condition);
         }
+        public void TongTien(HoaDonBan ex)
+        {
+            db.ExcuteReaderData(@"update HOADONBAN set TongTienBan = (select sum(ThanhTienBan) from 
+                                CHITIETHDBAN where MaHD = '"+ex.MaHD+"') where MaHD = '"+ex.MaHD+"'");
+        }
+        
     }
 }

@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSetHoaDonBan" targetNamespace="http://tempuri.org/DataSetHoaDonBan.xsd" xmlns:mstns="http://tempuri.org/DataSetHoaDonBan.xsd" xmlns="http://tempuri.org/DataSetHoaDonBan.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections />
+        <Tables />
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSetHoaDonBan" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSetHoaDonBan" msprop:Generator_UserDSName="DataSetHoaDonBan">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Chitiethoadon" msprop:Generator_TableClassName="ChitiethoadonDataTable" msprop:Generator_TableVarName="tableChitiethoadon" msprop:Generator_TablePropName="Chitiethoadon" msprop:Generator_RowDeletingName="ChitiethoadonRowDeleting" msprop:Generator_RowChangingName="ChitiethoadonRowChanging" msprop:Generator_RowEvHandlerName="ChitiethoadonRowChangeEventHandler" msprop:Generator_RowDeletedName="ChitiethoadonRowDeleted" msprop:Generator_UserTableName="Chitiethoadon" msprop:Generator_RowChangedName="ChitiethoadonRowChanged" msprop:Generator_RowEvArgName="ChitiethoadonRowChangeEvent" msprop:Generator_RowClassName="ChitiethoadonRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="MaSP" msprop:Generator_ColumnVarNameInTable="columnMaSP" msprop:Generator_ColumnPropNameInRow="MaSP" msprop:Generator_ColumnPropNameInTable="MaSPColumn" msprop:Generator_UserColumnName="MaSP" type="xs:string" minOccurs="0" />
+              <xs:element name="SLBan" msprop:Generator_ColumnVarNameInTable="columnSLBan" msprop:Generator_ColumnPropNameInRow="SLBan" msprop:Generator_ColumnPropNameInTable="SLBanColumn" msprop:Generator_UserColumnName="SLBan" type="xs:string" minOccurs="0" />
+              <xs:element name="DonGiaBan" msprop:Generator_ColumnVarNameInTable="columnDonGiaBan" msprop:Generator_ColumnPropNameInRow="DonGiaBan" msprop:Generator_ColumnPropNameInTable="DonGiaBanColumn" msprop:Generator_UserColumnName="DonGiaBan" type="xs:string" minOccurs="0" />
+              <xs:element name="ThanhTienBan" msprop:Generator_ColumnVarNameInTable="columnThanhTienBan" msprop:Generator_ColumnPropNameInRow="ThanhTienBan" msprop:Generator_ColumnPropNameInTable="ThanhTienBanColumn" msprop:Generator_UserColumnName="ThanhTienBan" type="xs:string" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

@@ -20,7 +20,9 @@ namespace QuanLyCuaHangDienThoai
         BLL_HoaDonBan bllhdb = new BLL_HoaDonBan();
         BLL_KhachHang bllkh = new BLL_KhachHang();
         BLL_NhanVien bllnv = new BLL_NhanVien();
+        BLL_CTHDB bllcthd = new BLL_CTHDB();
         HoaDonBan hdb = new HoaDonBan();
+        CTHDB cthd = new CTHDB();
         bool flagCheck; int pos = -1;
         private void frmHoaDonBan_Load(object sender, EventArgs e)
         {
@@ -33,18 +35,22 @@ namespace QuanLyCuaHangDienThoai
 
             dgHoaDon.DataSource = bllhdb.GetData("");
             dgHoaDon.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgHoaDon.Columns["MaHD"].HeaderText = "Số HDB";
-            dgHoaDon.Columns["MaHD"].Frozen = true;
-            dgHoaDon.Columns["MaHD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dgHoaDon.Columns["MaHD"].Width = 100;
-            dgHoaDon.Columns["MaNV"].HeaderText = "Nhân Viên";
-            dgHoaDon.Columns["MaNV"].Width = 200;
-            dgHoaDon.Columns["MaKH"].HeaderText = "Khách Hàng";
-            dgHoaDon.Columns["MaKH"].Width = 100;
-            dgHoaDon.Columns["NgayBan"].HeaderText = "Ngày Bán";
-            dgHoaDon.Columns["NgayBan"].Width = 100;
-            dgHoaDon.Columns["TongTienBan"].HeaderText = "Tổng Tiền";
-            dgHoaDon.Columns["TongTienBan"].Width = 100;
+            if (dgHoaDon.Rows.Count > 0)
+            {
+                dgHoaDon.Columns["MaHD"].HeaderText = "Số HDB";
+                dgHoaDon.Columns["MaHD"].Frozen = true;
+                dgHoaDon.Columns["MaHD"].DefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
+                dgHoaDon.Columns["MaHD"].Width = 100;
+                dgHoaDon.Columns["MaNV"].HeaderText = "Nhân Viên";
+                dgHoaDon.Columns["MaNV"].Width = 200;
+                dgHoaDon.Columns["MaKH"].HeaderText = "Khách Hàng";
+                dgHoaDon.Columns["MaKH"].Width = 100;
+                dgHoaDon.Columns["NgayBan"].HeaderText = "Ngày Bán";
+                dgHoaDon.Columns["NgayBan"].Width = 100;
+                dgHoaDon.Columns["TongTienBan"].HeaderText = "Tổng Tiền";
+                dgHoaDon.Columns["TongTienBan"].Width = 100;
+            }
+            
 
         }
         private void DisableElemnts()
@@ -170,7 +176,8 @@ namespace QuanLyCuaHangDienThoai
             hdb.MaHD = row[0].ToString();
             try
             {
-
+                cthd.MaHD = hdb.MaHD;
+                bllcthd.DeleteAllData(cthd);
                 bllhdb.DeleteData(hdb);
                 MessageBox.Show("Xóa Thành Công", "Thông báo");
                 LoadHoaDon();
@@ -191,6 +198,7 @@ namespace QuanLyCuaHangDienThoai
             DisableElemnts();
             pos = -1;
             btnThemMoi.Enabled = true;
+            LoadHoaDon();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -218,6 +226,30 @@ namespace QuanLyCuaHangDienThoai
             fr.SoHD = dgHoaDon.Rows[dong].Cells[0].Value.ToString();
             this.Close();
             fr.Show();
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            if (txtTimKiem.Text == "")
+            {
+                MessageBox.Show("Hãy nhập tên sản phẩm cần tìm", "Thông báo"); return;
+            }
+            try
+            {
+                hdb.MaHD = txtTimKiem.Text.Trim();
+                DataTable dt = bllhdb.GetData("where mahd like '" + hdb.MaHD + "%'");
+                if (dt == null)
+                {
+                    MessageBox.Show("Không tìm thấy hóa đơn", "Thông báo"); return;
+                }
+                dgHoaDon.DataSource = dt;
+            }
+            catch (Exception)
+            {
+
+                throw;
+            }
+            btnHuy.Enabled = true;
         }
         
     }

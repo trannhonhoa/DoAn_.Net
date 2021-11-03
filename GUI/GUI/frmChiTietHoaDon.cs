@@ -19,6 +19,8 @@ namespace QuanLyCuaHangDienThoai
         }
         BLL_CTHDB bllcthd = new BLL_CTHDB();
         BLL_SanPham bllsp = new BLL_SanPham();
+        BLL_HoaDonBan bllhdb = new BLL_HoaDonBan();
+        HoaDonBan hdb = new HoaDonBan();
         CTHDB cthdb = new CTHDB();
         SanPham sp = new SanPham();
         public string SoHD { get; set; }
@@ -202,15 +204,46 @@ namespace QuanLyCuaHangDienThoai
             sp.SLTon = cthdb.SLBan;
             sp.MaSP = cthdb.MaSP;
             bllsp.UpdateSL(sp);
+
+            hdb.MaHD = cthdb.MaHD;
+            bllhdb.TongTien(hdb);
             pos = -1;
             Resettext();
+            LoadDefault();
             LoadCTHDB();
         }
 
         private void cmbMaSP_SelectedIndexChanged(object sender, EventArgs e)
         {
-            txtDonGia.Text = bllsp.GetSL("where masp = '"+cmbMaSP.SelectedValue.ToString()+"'");
+            txtDonGia.Text = bllsp.GetGiaBan("where masp = '"+cmbMaSP.SelectedValue.ToString()+"'");
             txtSoLuong.Text = bllsp.GetSL("where masp = '" + cmbMaSP.SelectedValue.ToString() + "'");
+        }
+
+        private void btnQuayLai_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnHuy_Click(object sender, EventArgs e)
+        {
+            Resettext();
+            DisableElemnts();
+            pos = -1;
+            btnThemMoi.Enabled = true;
+        }
+
+        private void btnQuayLai_Click_1(object sender, EventArgs e)
+        {
+            frmHoaDonBan fr = new frmHoaDonBan();
+            this.Close();
+            fr.Show();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            frmReportHDB fr = new frmReportHDB();
+            fr.MaHD = cmbSoHD.Text;
+            fr.Show();
         }
 
     }

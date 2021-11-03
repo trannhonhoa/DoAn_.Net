@@ -17,3 +17,9 @@ E:\do an c#\GUI\GUI\bin\Debug\DAL.pdb
 E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmKhachHang.resources
 E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmHoaDonBan.resources
 E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmChiTietHoaDon.resources
+E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmReportHDB.resources
+E:\do an c#\GUI\GUI\obj\Debug\RdlCompile.cache
+E:\do an c#\GUI\GUI\obj\Debug\RdlCompile.compiled
+E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmThongKeKhoHang.resources
+E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmSanPhamDaBan.resources
+E:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmLogin.resources
