@@ -19,7 +19,7 @@ namespace QuanLyCuaHangDienThoai
         }
 
         public string MaHD { get; set; }
-
+       
         private void reportHoaDonBan_Load(object sender, EventArgs e)
         {
 
@@ -27,14 +27,15 @@ namespace QuanLyCuaHangDienThoai
 
         private void frmReportHDB_Load(object sender, EventArgs e)
         {
+           
             SqlConnection conn = new SqlConnection("Server=DESKTOP-P9L00KA; Database=CuaHangDienThoai; User Id=sa; pwd=trannhonhoa");
             SqlDataAdapter adapter = new SqlDataAdapter("select MaSp, SLBan, DonGiaBan, ThanhTienBan from CHITIETHDBAN where mahd = '"+MaHD+"'", conn);
             DataSet ds = new DataSet();
-            adapter.Fill(ds);
+            adapter.Fill(ds, "HD");
             this.reportHoaDonBan.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangDienThoai.ReportHDB.rdlc";
             ReportDataSource rds = new ReportDataSource();
             rds.Name = "DataSet1";
-            rds.Value = ds.Tables[0];
+            rds.Value = ds.Tables["HD"];
             reportHoaDonBan.LocalReport.DataSources.Add(rds);
             this.reportHoaDonBan.RefreshReport();
         }

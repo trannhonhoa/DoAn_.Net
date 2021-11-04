@@ -24,6 +24,7 @@ namespace QuanLyCuaHangDienThoai
         CTHDB cthdb = new CTHDB();
         SanPham sp = new SanPham();
         public string SoHD { get; set; }
+       
         bool flagCheck;
         int pos = -1;
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)
@@ -137,6 +138,8 @@ namespace QuanLyCuaHangDienThoai
 
                 MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
             }
+            hdb.MaHD = SoHD;
+            bllhdb.TongTien(hdb);
         }
 
         private void dgCTHDB_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -201,9 +204,9 @@ namespace QuanLyCuaHangDienThoai
                     MessageBox.Show("Lỗi! Không sửa được", "Thông báo");
                 }
             }
-            sp.SLTon = cthdb.SLBan;
-            sp.MaSP = cthdb.MaSP;
-            bllsp.UpdateSL(sp);
+            //sp.SLTon = cthdb.SLBan;
+            //sp.MaSP = cthdb.MaSP;
+            //bllsp.UpdateSL(sp);
 
             hdb.MaHD = cthdb.MaHD;
             bllhdb.TongTien(hdb);

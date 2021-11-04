@@ -18,7 +18,6 @@ namespace QuanLyCuaHangDienThoai
             InitializeComponent();
         }
 
-       
         BLL_KhachHang bllkh = new BLL_KhachHang();
         KhachHang kh = new KhachHang();
         bool flagCheck; int pos = -1;
@@ -146,7 +145,7 @@ namespace QuanLyCuaHangDienThoai
                     }
                     catch (Exception)
                     {
-
+                        
                         MessageBox.Show("Lỗi! Không thêm được", "Thông báo");
                     }
                 }

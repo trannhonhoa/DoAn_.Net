@@ -54,5 +54,11 @@ namespace QuanLyCuaHangDienThoai
 		        throw;
 	        }
         }
+
+        private void lbclear_Click(object sender, EventArgs e)
+        {
+            txtpass.ResetText();
+            txtusername.ResetText();
+        }
     }
 }

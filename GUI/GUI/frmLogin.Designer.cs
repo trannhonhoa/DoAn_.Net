@@ -67,6 +67,7 @@
             this.lbclear.Size = new System.Drawing.Size(78, 15);
             this.lbclear.TabIndex = 18;
             this.lbclear.Text = "Clear Fieldls";
+            this.lbclear.Click += new System.EventHandler(this.lbclear_Click);
             // 
             // btnlogin
             // 
@@ -100,9 +101,10 @@
             // 
             // txtpass
             // 
-            this.txtpass.Location = new System.Drawing.Point(97, 180);
+            this.txtpass.Location = new System.Drawing.Point(98, 178);
             this.txtpass.Multiline = true;
             this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(179, 22);
             this.txtpass.TabIndex = 14;
             // 
@@ -112,7 +114,7 @@
             this.txtusername.Multiline = true;
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(179, 22);
-            this.txtusername.TabIndex = 13;
+            this.txtusername.TabIndex = 33;
             // 
             // pictureBox3
             // 
@@ -162,6 +164,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmLogin";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
