@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lbimgpath = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gb1 = new System.Windows.Forms.GroupBox();
@@ -58,7 +59,6 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnThemMoi = new System.Windows.Forms.Button();
-            this.lbimgpath = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gb1.SuspendLayout();
@@ -76,6 +76,17 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1207, 77);
             this.panel1.TabIndex = 0;
+            // 
+            // lbimgpath
+            // 
+            this.lbimgpath.AutoSize = true;
+            this.lbimgpath.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbimgpath.Location = new System.Drawing.Point(7, 55);
+            this.lbimgpath.Name = "lbimgpath";
+            this.lbimgpath.Size = new System.Drawing.Size(94, 19);
+            this.lbimgpath.TabIndex = 3;
+            this.lbimgpath.Text = "C:\\\\temp.jpg";
+            this.lbimgpath.Visible = false;
             // 
             // label1
             // 
@@ -268,7 +279,7 @@
             // 
             // dgSanPham
             // 
-            this.dgSanPham.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dgSanPham.BackgroundColor = System.Drawing.SystemColors.ActiveBorder;
             this.dgSanPham.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgSanPham.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgSanPham.Location = new System.Drawing.Point(0, 45);
@@ -388,17 +399,6 @@
             this.btnThemMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThemMoi.UseVisualStyleBackColor = true;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
-            // 
-            // lbimgpath
-            // 
-            this.lbimgpath.AutoSize = true;
-            this.lbimgpath.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbimgpath.Location = new System.Drawing.Point(7, 55);
-            this.lbimgpath.Name = "lbimgpath";
-            this.lbimgpath.Size = new System.Drawing.Size(94, 19);
-            this.lbimgpath.TabIndex = 3;
-            this.lbimgpath.Text = "C:\\\\temp.jpg";
-            this.lbimgpath.Visible = false;
             // 
             // frmDienThoai
             // 

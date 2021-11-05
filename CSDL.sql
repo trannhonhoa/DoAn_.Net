@@ -83,6 +83,8 @@ CREATE TABLE NHACUNGCAP(
 INSERT NHACUNGCAP VALUES (N'NCC0001', N'Thế giới di động', N'0756373658', N'Hà Nội')
 INSERT NHACUNGCAP VALUES (N'NCC0002', N'Điện Máy Xanh', N'0744849176', N'TP.HCM')
 INSERT NHACUNGCAP VALUES (N'NCC0003', N'FPT', N'0733123764', N'Đà Nẵng')
+
+
 /*Oke dc */
 CREATE TABLE HOADONBAN(
 	MaHD nvarchar(50) NOT NULL,
@@ -130,3 +132,5 @@ begin
 	update SANPHAM set SanPham.SLTon = SANPHAM.SLTon + deleted.SLBan from deleted
 	where SANPHAM.MaSP = deleted.MaSP
 end
+
+select * from KHACHHANG where TenKH   like '%Cường'

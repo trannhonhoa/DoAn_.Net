@@ -237,7 +237,7 @@ namespace QuanLyCuaHangDienThoai
             try
             {
                 hdb.MaHD = txtTimKiem.Text.Trim();
-                DataTable dt = bllhdb.GetData("where mahd like '" + hdb.MaHD + "%'");
+                DataTable dt = bllhdb.GetData("where mahd like '%" + hdb.MaHD + "%'");
                 if (dt == null)
                 {
                     MessageBox.Show("Không tìm thấy hóa đơn", "Thông báo"); return;

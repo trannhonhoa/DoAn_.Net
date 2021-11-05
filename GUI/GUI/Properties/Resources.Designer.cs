@@ -163,10 +163,42 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5g_11 {
+            get {
+                object obj = ResourceManager.GetObject("5g-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _97460946_businessman_on_blurred_background_using_5g_network_with_mobile_phone_3d_rendering {
             get {
                 object obj = ResourceManager.GetObject("97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-" +
                         "rendering", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _97460946_businessman_on_blurred_background_using_5g_network_with_mobile_phone_3d_rendering1 {
+            get {
+                object obj = ResourceManager.GetObject("97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-" +
+                        "rendering1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _97460946_businessman_on_blurred_background_using_5g_network_with_mobile_phone_3d_rendering2 {
+            get {
+                object obj = ResourceManager.GetObject("97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-" +
+                        "rendering2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -197,6 +229,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap agt_update_product2 {
             get {
                 object obj = ResourceManager.GetObject("agt_update_product2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background_2579719_960_720 {
+            get {
+                object obj = ResourceManager.GetObject("background-2579719_960_720", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -237,6 +279,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap bg3 {
             get {
                 object obj = ResourceManager.GetObject("bg3", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bg4 {
+            get {
+                object obj = ResourceManager.GetObject("bg4", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -384,6 +436,26 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap phone {
+            get {
+                object obj = ResourceManager.GetObject("phone", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap phone1 {
+            get {
+                object obj = ResourceManager.GetObject("phone1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap shopping_cart {
             get {
                 object obj = ResourceManager.GetObject("shopping_cart", resourceCulture);
@@ -397,6 +469,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap sort_ascend {
             get {
                 object obj = ResourceManager.GetObject("sort_ascend", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tải_xuống {
+            get {
+                object obj = ResourceManager.GetObject("tải xuống", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

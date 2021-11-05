@@ -121,11 +121,11 @@
   <data name="user_group" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\user_group.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="XoaH" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\XoaH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="bg4" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bg4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="lg" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\lg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phone" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="bg2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -148,14 +148,23 @@
   <data name="2Sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2Sua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="sort_ascend" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\sort_ascend.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering2" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="shopping_cart" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\shopping_cart.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="tải xuống" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\tải xuống.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agt_update_product" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agt_update_product.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -172,11 +181,14 @@
   <data name="dt" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\dt.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="48px-Crystal_Clear_action_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\48px-Crystal_Clear_action_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="lg" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\lg.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="1437482150_corbeille box sale" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1437482150_corbeille box sale.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="48px-Crystal_Clear_action_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\48px-Crystal_Clear_action_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -187,11 +199,14 @@
   <data name="3Xoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3Xoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="background-2579719_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\background-2579719_960_720.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="gnome_preferences_system" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\gnome_preferences_system.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="XoaH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\XoaH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-cancel-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-cancel-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -205,11 +220,17 @@
   <data name="1Them" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1Them.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="wp28485271" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wp28485271.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="invoice (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invoice (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="thanh toan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanh toan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hinh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hinh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -226,6 +247,9 @@
   <data name="1437482686_sale-pointer" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\1437482686_sale-pointer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="5g-11" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5g-11.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="bg" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -235,7 +259,7 @@
   <data name="diagram_v2_02 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\diagram_v2_02 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thanh toan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thanh toan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="phone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\phone1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

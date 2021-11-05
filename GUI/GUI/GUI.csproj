@@ -334,6 +334,30 @@
   <ItemGroup>
     <None Include="Resources\thanh toan.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bg4.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5g-11.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-2579719_960_720.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tải xuống.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\phone1.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

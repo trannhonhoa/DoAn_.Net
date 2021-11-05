@@ -88,7 +88,7 @@ namespace QuanLyCuaHangDienThoai
         private void LoadSanPham()
         {
             dgSanPham.DataSource = bllsp.GetData("");
-            
+            if (dgSanPham.Rows.Count <= 0) return;
             dgSanPham.Columns["masp"].HeaderText = "Mã Sản Phẩm";
             dgSanPham.Columns["masp"].Width = 100;
             dgSanPham.Columns["masp"].Visible = true;
@@ -315,7 +315,7 @@ namespace QuanLyCuaHangDienThoai
             try
             {
                 sp.TenSP = txtTimKiem.Text.Trim();
-                DataTable dt = bllsp.GetData("where tensp like '" + sp.TenSP + "%'");
+                DataTable dt = bllsp.GetData("where tensp like '%" + sp.TenSP + "%'");
                 if(dt == null){
                     MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo"); return;
                 }
