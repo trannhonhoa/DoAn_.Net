@@ -217,7 +217,7 @@ namespace QuanLyCuaHangDienThoai
             try
             {
                 kh.TenKH = txtTimKiem.Text.Trim();
-                DataTable dt = bllkh.GetData("where tenkh like '" + kh.TenKH + "'");
+                DataTable dt = bllkh.GetData("where tenkh like N'%" + kh.TenKH + "%'");
                 if (dt == null)
                 {
                     MessageBox.Show("Không tìm thấy khách hàng", "Thông báo"); return;
