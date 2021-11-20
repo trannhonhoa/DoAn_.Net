@@ -7,3 +7,12 @@ E:\do an c#\GUI\BLL\bin\Debug\DTO.pdb
 E:\do an c#\GUI\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
 E:\do an c#\GUI\BLL\obj\Debug\BLL.dll
 E:\do an c#\GUI\BLL\obj\Debug\BLL.pdb
+F:\do an c#\GUI\BLL\bin\Debug\BLL.dll
+F:\do an c#\GUI\BLL\bin\Debug\BLL.pdb
+F:\do an c#\GUI\BLL\bin\Debug\DAL.dll
+F:\do an c#\GUI\BLL\bin\Debug\DTO.dll
+F:\do an c#\GUI\BLL\bin\Debug\DAL.pdb
+F:\do an c#\GUI\BLL\bin\Debug\DTO.pdb
+F:\do an c#\GUI\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+F:\do an c#\GUI\BLL\obj\Debug\BLL.dll
+F:\do an c#\GUI\BLL\obj\Debug\BLL.pdb

@@ -140,21 +140,21 @@
             // cmbNCC
             // 
             this.cmbNCC.FormattingEnabled = true;
-            this.cmbNCC.Location = new System.Drawing.Point(126, 359);
+            this.cmbNCC.Location = new System.Drawing.Point(126, 364);
             this.cmbNCC.Name = "cmbNCC";
             this.cmbNCC.Size = new System.Drawing.Size(218, 27);
             this.cmbNCC.TabIndex = 32;
             // 
             // txtGiaBan
             // 
-            this.txtGiaBan.Location = new System.Drawing.Point(126, 320);
+            this.txtGiaBan.Location = new System.Drawing.Point(126, 278);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(218, 27);
             this.txtGiaBan.TabIndex = 31;
             // 
             // txtGiaNhap
             // 
-            this.txtGiaNhap.Location = new System.Drawing.Point(126, 281);
+            this.txtGiaNhap.Location = new System.Drawing.Point(126, 316);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(218, 27);
             this.txtGiaNhap.TabIndex = 30;
@@ -216,7 +216,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(16, 288);
+            this.label7.Location = new System.Drawing.Point(16, 316);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(77, 19);
             this.label7.TabIndex = 22;
@@ -225,7 +225,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(16, 327);
+            this.label6.Location = new System.Drawing.Point(16, 281);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(68, 19);
             this.label6.TabIndex = 21;

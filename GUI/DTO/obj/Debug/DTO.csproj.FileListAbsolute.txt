@@ -5,3 +5,10 @@ E:\do an c#\GUI\DTO\obj\Debug\DTO.dll
 E:\do an c#\GUI\DTO\obj\Debug\DTO.pdb
 E:\do an c#\GUI\DTO\obj\Debug\RdlCompile.cache
 E:\do an c#\GUI\DTO\obj\Debug\RdlCompile.compiled
+F:\do an c#\GUI\DTO\bin\Debug\DTO.dll
+F:\do an c#\GUI\DTO\bin\Debug\DTO.pdb
+F:\do an c#\GUI\DTO\obj\Debug\DTO.csprojResolveAssemblyReference.cache
+F:\do an c#\GUI\DTO\obj\Debug\RdlCompile.cache
+F:\do an c#\GUI\DTO\obj\Debug\RdlCompile.compiled
+F:\do an c#\GUI\DTO\obj\Debug\DTO.dll
+F:\do an c#\GUI\DTO\obj\Debug\DTO.pdb

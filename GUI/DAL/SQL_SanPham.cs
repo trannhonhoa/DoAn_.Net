@@ -45,7 +45,7 @@ namespace DAL
         }
         public string GetDonGia (string Condition)
         {
-            return db.GetDataText("Select GiaNhap from SANPHAM " + Condition);
+            return db.GetDataText("Select GiaBan from SANPHAM " + Condition);
         }
         public void UpdateSL(SanPham ex){
             db.ExcuteReaderData("UPDATE SANPHAM SET SLTon = SLTon - '" + ex.SLTon + "' where masp='" +ex.MaSP  + "'");

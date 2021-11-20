@@ -14,9 +14,12 @@ namespace QuanLyCuaHangDienThoai
 {
     public partial class frmDienThoai : Form
     {
-        public frmDienThoai()
+        string permission = "";
+        public frmDienThoai(string Per)
         {
             InitializeComponent();
+            this.permission = Per;
+            
         }
         
         private void frmDienThoai_Load(object sender, EventArgs e)
@@ -109,13 +112,14 @@ namespace QuanLyCuaHangDienThoai
             dgSanPham.Columns["slton"].Width = 100;
             dgSanPham.Columns["slton"].Visible = true;
 
+            dgSanPham.Columns["giaban"].HeaderText = "Giá Bán";
+            dgSanPham.Columns["giaban"].Width = 120;
+            dgSanPham.Columns["giaban"].Visible = true;
+
             dgSanPham.Columns["gianhap"].HeaderText = "Giá Nhập";
             dgSanPham.Columns["gianhap"].Width = 120;
             dgSanPham.Columns["gianhap"].Visible = true;
 
-            dgSanPham.Columns["giaban"].HeaderText = "Giá Bán";
-            dgSanPham.Columns["giaban"].Width = 120;
-            dgSanPham.Columns["giaban"].Visible = true;
 
             dgSanPham.Columns["mancc"].HeaderText = "Mã NCC";
             dgSanPham.Columns["mancc"].Width = 100;
@@ -128,9 +132,10 @@ namespace QuanLyCuaHangDienThoai
         int pos = -1;
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-            EnbleElements();
-            txtMaSanPham.Focus();
-            flagCheck = true;
+                       
+                EnbleElements();
+                txtMaSanPham.Focus();
+                flagCheck = true;
         }
        
         private void btnLuu_Click(object sender, EventArgs e)
@@ -172,7 +177,7 @@ namespace QuanLyCuaHangDienThoai
 
                 MessageBox.Show("Giá nhập không được để trống", "Thông báo"); return;
             }
-            else if (!int.TryParse(txtSoLuong.Text, out gianhap))
+            else if (!int.TryParse(txtGiaNhap.Text, out gianhap))
             {
                 MessageBox.Show("Giá nhập phải là số"); return;
             }
@@ -198,6 +203,7 @@ namespace QuanLyCuaHangDienThoai
 
                         bllsp.AddData(sp);
                         MessageBox.Show("Thêm thành công", "Thông báo");
+                        btnHuy.PerformClick();
                     }
                     catch (Exception)
                     {
@@ -212,7 +218,7 @@ namespace QuanLyCuaHangDienThoai
                 {
                     bllsp.EditData(sp);
                     MessageBox.Show("Sửa Thành Công", "Thông báo");
-                    
+                    btnHuy.PerformClick();
                     
                 }
                 catch (Exception)
@@ -273,8 +279,8 @@ namespace QuanLyCuaHangDienThoai
         {
             btnLuu.Enabled = true;
             flagCheck = false;
-            
             EnbleElements();
+            txtMaSanPham.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
@@ -329,7 +335,6 @@ namespace QuanLyCuaHangDienThoai
             btnHuy.Enabled = true;
            
         }
-
         private void gb1_Enter(object sender, EventArgs e)
         {
 

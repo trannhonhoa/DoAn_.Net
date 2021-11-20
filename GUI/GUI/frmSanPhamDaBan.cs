@@ -21,7 +21,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void frmSanPhamDaBan_Load(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection("Server=DESKTOP-P9L00KA; Database=CuaHangDienThoai; User Id=sa; pwd=trannhonhoa");
+            SqlConnection conn = new SqlConnection("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=CuaHangDienThoai; User = sa; password=trannhonhoa; Integrated Security=True");
 
             SqlDataAdapter adapter = new SqlDataAdapter("select ct.MaHD, MaSP, SLBan, DonGiaBan, ThanhTienBan from HOADONBAN as hdb, CHITIETHDBAN as ct where hdb.MaHD = ct.MaHD", conn);
             DataSet ds = new DataSet();

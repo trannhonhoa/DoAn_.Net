@@ -132,5 +132,3 @@ begin
 	update SANPHAM set SanPham.SLTon = SANPHAM.SLTon + deleted.SLBan from deleted
 	where SANPHAM.MaSP = deleted.MaSP
 end
-
-select * from KHACHHANG where TenKH   like '%Cường'

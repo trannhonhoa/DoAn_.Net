@@ -142,6 +142,7 @@ namespace QuanLyCuaHangDienThoai
                     {
                         bllkh.AddData(kh);
                         MessageBox.Show("Thêm thành công ", "Thông báo");
+                        btnHuy.PerformClick();
                     }
                     catch (Exception)
                     {
@@ -157,6 +158,7 @@ namespace QuanLyCuaHangDienThoai
                 {
                     bllkh.EditData(kh);
                     MessageBox.Show("Sửa thành công ", "Thông báo");
+                    btnHuy.PerformClick();
                 }
                 catch (Exception)
                 {
@@ -174,8 +176,8 @@ namespace QuanLyCuaHangDienThoai
         {
             btnLuu.Enabled = true;
             flagCheck = false;
-
             EnbleElements();
+            txtMaKH.Enabled = false;
         }
 
         private void btnHuy_Click(object sender, EventArgs e)

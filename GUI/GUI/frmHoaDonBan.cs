@@ -135,6 +135,7 @@ namespace QuanLyCuaHangDienThoai
                 {
                     bllhdb.AddData(hdb);
                     MessageBox.Show("Thêm thành công", "Thông báo");
+                    btnHuy.PerformClick();
                 }
                 catch (Exception)
                 {
@@ -148,6 +149,7 @@ namespace QuanLyCuaHangDienThoai
                 {
                     bllhdb.EditData(hdb);
                     MessageBox.Show("Sửa thành công", "Thông báo");
+                    btnHuy.PerformClick();
                 }
                 catch (Exception)
                 {
@@ -166,10 +168,14 @@ namespace QuanLyCuaHangDienThoai
             flagCheck = false;
 
             EnbleElements();
+            txtSoHD.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (ret == DialogResult.OK)
+            {
             if (pos == -1) return;
             DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
            
@@ -189,6 +195,7 @@ namespace QuanLyCuaHangDienThoai
             {
 
                 MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+            }
             }
         }
 

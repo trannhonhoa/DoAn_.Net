@@ -16,7 +16,7 @@ namespace QuanLyCuaHangDienThoai
         {
             InitializeComponent();
         }
-
+        public string Per { get; set; }
         private void frmMain_Load(object sender, EventArgs e)
         {
 
@@ -24,7 +24,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void sanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDienThoai dt = new frmDienThoai();
+            frmDienThoai dt = new frmDienThoai(Per);
             dt.Show();
 
         }
@@ -33,6 +33,7 @@ namespace QuanLyCuaHangDienThoai
         {
             frmKhachHang kh = new frmKhachHang();
             kh.Show();
+           
         }
 
         private void hóaĐơnBánHàngToolStripMenuItem_Click(object sender, EventArgs e)

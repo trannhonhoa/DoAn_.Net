@@ -11,7 +11,7 @@ namespace DAL
     public class DataProvider
     {
         public SqlConnection conn = null;
-        string strConn = "Server=DESKTOP-P9L00KA; Database=CuaHangDienThoai; User Id=sa; pwd=trannhonhoa";
+        string strConn = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=CuaHangDienThoai; User = sa; password=trannhonhoa; Integrated Security=True";
         public void OpenConnection()
         {
             if (conn == null)

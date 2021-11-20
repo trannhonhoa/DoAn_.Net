@@ -115,10 +115,14 @@ namespace QuanLyCuaHangDienThoai
             flagCheck = false;
 
             EnbleElements();
+            
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (ret == DialogResult.OK)
+            {
             if (pos == -1) return;
             DataRow row = (dgCTHDB.Rows[pos].DataBoundItem as DataRowView).Row;
 
@@ -140,6 +144,7 @@ namespace QuanLyCuaHangDienThoai
             }
             hdb.MaHD = SoHD;
             bllhdb.TongTien(hdb);
+            }
         }
 
         private void dgCTHDB_CellClick(object sender, DataGridViewCellEventArgs e)

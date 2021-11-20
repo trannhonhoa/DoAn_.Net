@@ -37,10 +37,12 @@ namespace QuanLyCuaHangDienThoai
             {
                 lg.username = txtusername.Text;
                 lg.password = txtpass.Text;
-		        if(blllg.GetData("where username = '"+lg.username+"' and password = '"+lg.password+"' ") != null){
+                DataTable dt = blllg.GetData("where username = '"+lg.username+"' and password = '"+lg.password+"' ");
+		        if( dt != null){
                     MessageBox.Show("Đăng nhập thành công", "Thông báo");
                     frmMain fr = new frmMain();
                     this.Hide();
+                    fr.Per = dt.Rows[0][2].ToString();
                     fr.Show();
                 }
                 else
