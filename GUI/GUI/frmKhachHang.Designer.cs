@@ -42,12 +42,12 @@
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.txtTimKiem = new System.Windows.Forms.TextBox();
+            this.btnTimKiem = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtTimKiem = new System.Windows.Forms.TextBox();
-            this.btnTimKiem = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgKhachHang)).BeginInit();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -62,6 +62,7 @@
             this.dgKhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgKhachHang.Location = new System.Drawing.Point(0, 93);
             this.dgKhachHang.Name = "dgKhachHang";
+            this.dgKhachHang.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgKhachHang.Size = new System.Drawing.Size(1023, 152);
             this.dgKhachHang.TabIndex = 28;
             this.dgKhachHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgKhachHang_CellContentClick);
@@ -224,6 +225,29 @@
             this.panel2.Size = new System.Drawing.Size(1023, 43);
             this.panel2.TabIndex = 26;
             // 
+            // txtTimKiem
+            // 
+            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtTimKiem.Location = new System.Drawing.Point(597, 5);
+            this.txtTimKiem.Multiline = true;
+            this.txtTimKiem.Name = "txtTimKiem";
+            this.txtTimKiem.Size = new System.Drawing.Size(227, 35);
+            this.txtTimKiem.TabIndex = 37;
+            // 
+            // btnTimKiem
+            // 
+            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
+            this.btnTimKiem.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.find__1_;
+            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnTimKiem.Location = new System.Drawing.Point(483, 0);
+            this.btnTimKiem.Name = "btnTimKiem";
+            this.btnTimKiem.Size = new System.Drawing.Size(108, 43);
+            this.btnTimKiem.TabIndex = 36;
+            this.btnTimKiem.Text = "Tìm Kiếm";
+            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTimKiem.UseVisualStyleBackColor = true;
+            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
+            // 
             // btnHuy
             // 
             this.btnHuy.Dock = System.Windows.Forms.DockStyle.Left;
@@ -273,29 +297,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1023, 50);
             this.panel1.TabIndex = 25;
-            // 
-            // txtTimKiem
-            // 
-            this.txtTimKiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTimKiem.Location = new System.Drawing.Point(597, 5);
-            this.txtTimKiem.Multiline = true;
-            this.txtTimKiem.Name = "txtTimKiem";
-            this.txtTimKiem.Size = new System.Drawing.Size(227, 35);
-            this.txtTimKiem.TabIndex = 37;
-            // 
-            // btnTimKiem
-            // 
-            this.btnTimKiem.Dock = System.Windows.Forms.DockStyle.Left;
-            this.btnTimKiem.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.find__1_;
-            this.btnTimKiem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTimKiem.Location = new System.Drawing.Point(483, 0);
-            this.btnTimKiem.Name = "btnTimKiem";
-            this.btnTimKiem.Size = new System.Drawing.Size(108, 43);
-            this.btnTimKiem.TabIndex = 36;
-            this.btnTimKiem.Text = "Tìm Kiếm";
-            this.btnTimKiem.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnTimKiem.UseVisualStyleBackColor = true;
-            this.btnTimKiem.Click += new System.EventHandler(this.btnTimKiem_Click);
             // 
             // frmKhachHang
             // 

@@ -28,7 +28,7 @@ namespace DAL
         //  LẤY DỮ LIỆU
         public DataTable GetData(string Condition)
         {
-            return db.GetData("Select * from HOADONBAN " + Condition);
+            return db.GetData("Select * from HOADONBAN" + Condition);
         }
         public void TongTien(HoaDonBan ex)
         {

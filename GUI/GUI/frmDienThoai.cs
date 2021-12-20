@@ -14,11 +14,11 @@ namespace QuanLyCuaHangDienThoai
 {
     public partial class frmDienThoai : Form
     {
-        string permission = "";
-        public frmDienThoai(string Per)
+        
+        public frmDienThoai()
         {
             InitializeComponent();
-            this.permission = Per;
+           
             
         }
         
@@ -254,8 +254,8 @@ namespace QuanLyCuaHangDienThoai
             txtTenSanPham.Text = row[2].ToString();
             txtDonViTinh.Text = row[3].ToString();
             txtSoLuong.Text = row[4].ToString();
-            txtGiaNhap.Text = row[5].ToString();
-            txtGiaBan.Text = row[6].ToString();
+            txtGiaBan.Text = row[5].ToString();
+            txtGiaNhap.Text = row[6].ToString();
             cmbNCC.SelectedValue = row[7].ToString();
             
         }

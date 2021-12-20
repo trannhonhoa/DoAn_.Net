@@ -42,7 +42,7 @@ namespace QuanLyCuaHangDienThoai
                     MessageBox.Show("Đăng nhập thành công", "Thông báo");
                     frmMain fr = new frmMain();
                     this.Hide();
-                    fr.Per = dt.Rows[0][2].ToString();
+                    //fr.Per = dt.Rows[0][2].ToString();
                     fr.Show();
                 }
                 else
@@ -61,6 +61,16 @@ namespace QuanLyCuaHangDienThoai
         {
             txtpass.ResetText();
             txtusername.ResetText();
+        }
+
+        private void txtusername_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            
+        }
+
+        private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
+        {
+           
         }
     }
 }

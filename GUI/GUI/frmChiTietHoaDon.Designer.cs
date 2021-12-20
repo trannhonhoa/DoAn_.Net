@@ -65,6 +65,7 @@
             this.dgCTHDB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgCTHDB.Location = new System.Drawing.Point(0, 164);
             this.dgCTHDB.Name = "dgCTHDB";
+            this.dgCTHDB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCTHDB.Size = new System.Drawing.Size(850, 341);
             this.dgCTHDB.TabIndex = 29;
             this.dgCTHDB.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgCTHDB_CellClick);
@@ -171,7 +172,7 @@
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.Location = new System.Drawing.Point(412, 75);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(83, 19);
+            this.label10.Size = new System.Drawing.Size(82, 19);
             this.label10.TabIndex = 4;
             this.label10.Text = "Thành Tiền";
             // 
@@ -317,7 +318,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold);
             this.label1.Location = new System.Drawing.Point(214, 10);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(424, 31);
+            this.label1.Size = new System.Drawing.Size(423, 31);
             this.label1.TabIndex = 0;
             this.label1.Text = "CHI TIẾT HÓA ĐƠN BÁN HÀNG";
             // 

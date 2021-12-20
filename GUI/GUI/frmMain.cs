@@ -24,7 +24,7 @@ namespace QuanLyCuaHangDienThoai
 
         private void sanPhamToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmDienThoai dt = new frmDienThoai(Per);
+            frmDienThoai dt = new frmDienThoai();
             dt.Show();
 
         }

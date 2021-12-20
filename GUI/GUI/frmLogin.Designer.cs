@@ -107,6 +107,7 @@
             this.txtpass.PasswordChar = '*';
             this.txtpass.Size = new System.Drawing.Size(179, 22);
             this.txtpass.TabIndex = 14;
+            this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
             // 
             // txtusername
             // 
@@ -115,6 +116,7 @@
             this.txtusername.Name = "txtusername";
             this.txtusername.Size = new System.Drawing.Size(179, 22);
             this.txtusername.TabIndex = 33;
+            this.txtusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusername_KeyPress);
             // 
             // pictureBox3
             // 
