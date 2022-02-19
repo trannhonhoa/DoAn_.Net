@@ -19,6 +19,7 @@ namespace QuanLyCuaHangDienThoai
         }
         BLL_Login blllg = new BLL_Login();
         Login lg = new Login();
+        Writelog wlg = new Writelog();
         private void frmLogin_Load(object sender, EventArgs e)
         {
             
@@ -37,23 +38,33 @@ namespace QuanLyCuaHangDienThoai
             {
                 lg.username = txtusername.Text;
                 lg.password = txtpass.Text;
-                DataTable dt = blllg.GetData("where username = '"+lg.username+"' and password = '"+lg.password+"' ");
+                DataTable dt = blllg.GetData(" where username = '" + lg.username + "' and password like CONVERT(varchar(50), HashBytes('md5', '" + lg.password + "'), 2)");
 		        if( dt != null){
                     MessageBox.Show("Đăng nhập thành công", "Thông báo");
                     frmMain fr = new frmMain();
+                  
                     this.Hide();
-                    //fr.Per = dt.Rows[0][2].ToString();
+                    fr.Per = dt.Rows[0][2].ToString();
+                    fr.NameUser = dt.Rows[0][0].ToString();
                     fr.Show();
+                    string path = (AppDomain.CurrentDomain.BaseDirectory + "LogFile.txt");
+                    if (!System.IO.File.Exists(path))
+                    {
+                        System.IO.File.Create(AppDomain.CurrentDomain.BaseDirectory + "LogFile.txt");
+                        
+                    }
+                    wlg.WriteLog(dt.Rows[0][0].ToString(), "Login");
+                  
                 }
                 else
                 {
-                    MessageBox.Show("Sai thông tin đăng nhập", "Thông báo");
+                    MessageBox.Show("Sai thông tin đăng nhập", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 	        }
 	        catch (Exception)
 	        {
-		
-		        throw;
+
+                MessageBox.Show("Lỗi kết nối cơ sở dữ liệu!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Error);
 	        }
         }
 
@@ -71,6 +82,16 @@ namespace QuanLyCuaHangDienThoai
         private void txtpass_KeyPress(object sender, KeyPressEventArgs e)
         {
            
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void frmLogin_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

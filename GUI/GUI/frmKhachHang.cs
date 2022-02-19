@@ -93,7 +93,7 @@ namespace QuanLyCuaHangDienThoai
         private void dgKhachHang_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             pos = e.RowIndex;
-            if (pos == -1) { return; }
+            if (pos == -1 || pos == dgKhachHang.Rows.Count - 1) { return; }
             AfterClickCell();
             DataRow row = (dgKhachHang.Rows[pos].DataBoundItem as DataRowView).Row;
             txtMaKH.Text = row[0].ToString();

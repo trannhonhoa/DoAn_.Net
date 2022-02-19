@@ -10,5 +10,7 @@ namespace DTO
     {
         public string username { get; set; }
         public string password { get; set; }
+        public int per { get; set; }
+        public string manv { get; set; }
     }
 }

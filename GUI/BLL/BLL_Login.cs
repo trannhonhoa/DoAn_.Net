@@ -15,5 +15,18 @@ namespace BLL
         {
             return sql.GetData(Condition);
         }
+        
+        public void AddData(Login nv)
+        {
+            sql.AddData(nv);
+        }
+        public void EditData(Login nv)
+        {
+            sql.EditData(nv);
+        }
+        public void DeleteData(Login nv)
+        {
+            sql.DeleteData(nv);
+        }
     }
 }

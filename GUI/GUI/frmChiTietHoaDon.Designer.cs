@@ -59,12 +59,13 @@
             // 
             // dgCTHDB
             // 
-            this.dgCTHDB.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgCTHDB.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgCTHDB.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgCTHDB.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgCTHDB.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgCTHDB.Location = new System.Drawing.Point(0, 164);
             this.dgCTHDB.Name = "dgCTHDB";
+            this.dgCTHDB.ReadOnly = true;
             this.dgCTHDB.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgCTHDB.Size = new System.Drawing.Size(850, 341);
             this.dgCTHDB.TabIndex = 29;
@@ -120,7 +121,7 @@
             this.cmbSoHD.Location = new System.Drawing.Point(205, 9);
             this.cmbSoHD.Name = "cmbSoHD";
             this.cmbSoHD.Size = new System.Drawing.Size(173, 27);
-            this.cmbSoHD.TabIndex = 14;
+            this.cmbSoHD.TabIndex = 0;
             // 
             // cmbMaSP
             // 
@@ -130,7 +131,7 @@
             this.cmbMaSP.Location = new System.Drawing.Point(501, 6);
             this.cmbMaSP.Name = "cmbMaSP";
             this.cmbMaSP.Size = new System.Drawing.Size(209, 27);
-            this.cmbMaSP.TabIndex = 14;
+            this.cmbMaSP.TabIndex = 2;
             this.cmbMaSP.SelectedIndexChanged += new System.EventHandler(this.cmbMaSP_SelectedIndexChanged);
             // 
             // label6
@@ -163,7 +164,7 @@
             this.txtThanhTien.Location = new System.Drawing.Point(501, 72);
             this.txtThanhTien.Name = "txtThanhTien";
             this.txtThanhTien.Size = new System.Drawing.Size(242, 27);
-            this.txtThanhTien.TabIndex = 5;
+            this.txtThanhTien.TabIndex = 4;
             // 
             // label10
             // 
@@ -184,7 +185,7 @@
             this.txtDonGia.Location = new System.Drawing.Point(501, 39);
             this.txtDonGia.Name = "txtDonGia";
             this.txtDonGia.Size = new System.Drawing.Size(242, 27);
-            this.txtDonGia.TabIndex = 5;
+            this.txtDonGia.TabIndex = 3;
             // 
             // button1
             // 
@@ -278,11 +279,11 @@
             this.txtSoLuong.Location = new System.Drawing.Point(205, 42);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(173, 27);
-            this.txtSoLuong.TabIndex = 5;
+            this.txtSoLuong.TabIndex = 1;
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.SystemColors.Control;
+            this.panel4.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.cmbSoHD);
             this.panel4.Controls.Add(this.cmbMaSP);
@@ -324,7 +325,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel1.Controls.Add(this.btnQuayLai);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -351,6 +352,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.LightSeaGreen;
             this.ClientSize = new System.Drawing.Size(850, 560);
             this.Controls.Add(this.dgCTHDB);
             this.Controls.Add(this.panel2);

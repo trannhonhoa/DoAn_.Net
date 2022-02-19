@@ -5,10 +5,10 @@ E:\do an c#\GUI\DAL\bin\Debug\DTO.pdb
 E:\do an c#\GUI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 E:\do an c#\GUI\DAL\obj\Debug\DAL.dll
 E:\do an c#\GUI\DAL\obj\Debug\DAL.pdb
-F:\do an c#\GUI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache
 F:\do an c#\GUI\DAL\obj\Debug\DAL.dll
 F:\do an c#\GUI\DAL\obj\Debug\DAL.pdb
 F:\do an c#\GUI\DAL\bin\Debug\DAL.dll
 F:\do an c#\GUI\DAL\bin\Debug\DAL.pdb
 F:\do an c#\GUI\DAL\bin\Debug\DTO.dll
 F:\do an c#\GUI\DAL\bin\Debug\DTO.pdb
+F:\do an c#\GUI\DAL\obj\Debug\DAL.csprojResolveAssemblyReference.cache

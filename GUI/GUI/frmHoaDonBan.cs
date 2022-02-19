@@ -91,12 +91,17 @@ namespace QuanLyCuaHangDienThoai
             cmbKhachHang.DataSource = bllkh.GetData("");
             cmbKhachHang.DisplayMember = "tenkh";
             cmbKhachHang.ValueMember = "makh";
-            cmbNhanVien.DataSource = bllnv.GetData("");
+            cmbNhanVien.DataSource = bllnv.GetData("  where nhanvien.manv = login.manv");
             cmbNhanVien.DisplayMember = "tennv";
             cmbNhanVien.ValueMember = "manv";
-            cmbNhanVien.SelectedIndex = 0;
-            cmbKhachHang.SelectedIndex = 0;
+            if (cmbKhachHang.Items.Count > 0 && cmbNhanVien.Items.Count > 0)
+            {
+                cmbNhanVien.SelectedIndex = 0;
+                cmbKhachHang.SelectedIndex = 0;
+            }
+          
             dtpNgayBan.Text = DateTime.Now.ToShortDateString();
+            radMaHD.Checked = true;
             
 
         }
@@ -111,15 +116,46 @@ namespace QuanLyCuaHangDienThoai
             btnHuy.Enabled = true;
         }
 
-        private void btnThemMoi_Click(object sender, EventArgs e)
+      
+
+        
+
+
+       
+       
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
         {
-            EnbleElements();
-            txtSoHD.Focus();
-            flagCheck = true;
+
         }
+
+        private void dgHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            pos = e.RowIndex;
+            if (pos == -1 || pos == dgHoaDon.Rows.Count - 1) { return; }
+            AfterClickCell();
+            DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
+            txtSoHD.Text = row[0].ToString();
+            cmbNhanVien.SelectedValue = row[1].ToString();
+            cmbKhachHang.SelectedValue = row[2].ToString();
+            dtpNgayBan.Value = DateTime.Parse(row[3].ToString());
+            txttt.Text = row[4].ToString();
+        }
+
+        private void dgHoaDon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            int dong = e.RowIndex;
+            frmChiTietHoaDon fr = new frmChiTietHoaDon();
+            fr.SoHD = dgHoaDon.Rows[dong].Cells[0].Value.ToString();
+            this.Close();
+            fr.Show();
+        }
+
+       
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
+            
             if (txtSoHD.Text == "")
             {
                 MessageBox.Show("Mã hóa đơn Không được để trống", "Thông báo"); return;
@@ -129,19 +165,29 @@ namespace QuanLyCuaHangDienThoai
             hdb.MaKH = cmbKhachHang.SelectedValue.ToString();
             hdb.NgayBan = dtpNgayBan.Value;
             hdb.TongTienBan = 0;
+            
             if (flagCheck)
             {
-                try
+                if (bllhdb.GetData(" Where MaHD = '" + hdb.MaHD + "'") != null)
                 {
-                    bllhdb.AddData(hdb);
-                    MessageBox.Show("Thêm thành công", "Thông báo");
-                    btnHuy.PerformClick();
+                    MessageBox.Show("Hóa đơn đã tồn tại", "Thông báo"); return;
                 }
-                catch (Exception)
+                else
                 {
+                    try
+                    {
 
-                    MessageBox.Show("Lỗi! Không thêm được"); throw;
+                        bllhdb.AddData(hdb);
+                        MessageBox.Show("Thêm thành công", "Thông báo");
+                        btnHuy.PerformClick();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Lỗi! Không thêm được"); throw;
+                    }
                 }
+                
             }
             else
             {
@@ -160,23 +206,37 @@ namespace QuanLyCuaHangDienThoai
             pos = -1;
             Resettext();
             LoadHoaDon();
+      
+        }
+
+        private void btnThemMoi_Click(object sender, EventArgs e)
+        {
+       
+            EnbleElements();
+            txtSoHD.Focus();
+            flagCheck = true;
+      
         }
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            
+       
             btnLuu.Enabled = true;
             flagCheck = false;
 
             EnbleElements();
             txtSoHD.Enabled = false;
+      
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+
             DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa", "Thông báo", MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
             if (ret == DialogResult.OK)
             {
-            if (pos == -1) return;
+            if (pos == -1 || pos == dgHoaDon.Rows.Count - 1) return;
             DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
            
             hdb.MaHD = row[0].ToString();
@@ -197,54 +257,42 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
             }
             }
+      
+
         }
 
         private void btnHuy_Click(object sender, EventArgs e)
         {
+      
             Resettext();
             DisableElemnts();
             pos = -1;
             btnThemMoi.Enabled = true;
             LoadHoaDon();
-        }
-
-        private void panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void dgHoaDon_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            pos = e.RowIndex;
-            if (pos == -1) { return; }
-            AfterClickCell();
-            DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
-            txtSoHD.Text = row[0].ToString();
-            cmbNhanVien.SelectedValue = row[1].ToString();
-            cmbKhachHang.SelectedValue = row[2].ToString();
-            dtpNgayBan.Value = DateTime.Parse(row[3].ToString());
-            txttt.Text = row[4].ToString();
-        }
-
-        private void dgHoaDon_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            int dong = e.RowIndex;
-            frmChiTietHoaDon fr = new frmChiTietHoaDon();
-            fr.SoHD = dgHoaDon.Rows[dong].Cells[0].Value.ToString();
-            this.Close();
-            fr.Show();
+       
         }
 
         private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            if (txtTimKiem.Text == "")
-            {
-                MessageBox.Show("Hãy nhập tên sản phẩm cần tìm", "Thông báo"); return;
-            }
+            
+            
+            DataTable dt = null;
             try
             {
                 hdb.MaHD = txtTimKiem.Text.Trim();
-                DataTable dt = bllhdb.GetData("where mahd like '%" + hdb.MaHD + "%'");
+                if (radMaHD.Checked)
+                {
+                    if (txtTimKiem.Text == "")
+                    {
+                        MessageBox.Show("Hãy nhập mã hóa đơn cần tìm", "Thông báo"); return;
+                    }
+                    dt = bllhdb.GetData(" where mahd = '"+hdb.MaHD+ "'");
+                   
+                }
+                else if (radNgayBan.Checked)
+                {
+                    dt = bllhdb.GetData(" where ngayban between '" + dtpFrom.Value + "' and '" + dtpTo.Value + "'");
+                }
                 if (dt == null)
                 {
                     MessageBox.Show("Không tìm thấy hóa đơn", "Thông báo"); return;
@@ -257,7 +305,15 @@ namespace QuanLyCuaHangDienThoai
                 throw;
             }
             btnHuy.Enabled = true;
+       
         }
+
+        private void radMaHD_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        
         
     }
 }

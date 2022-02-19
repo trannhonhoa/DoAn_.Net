@@ -34,7 +34,6 @@ F:\do an c#\GUI\GUI\bin\Debug\DAL.dll
 F:\do an c#\GUI\GUI\bin\Debug\BLL.pdb
 F:\do an c#\GUI\GUI\bin\Debug\DTO.pdb
 F:\do an c#\GUI\GUI\bin\Debug\DAL.pdb
-F:\do an c#\GUI\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmChiTietHoaDon.resources
 F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmDienThoai.resources
 F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmKhachHang.resources
@@ -46,5 +45,8 @@ F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmThongKeKhoHang.resources
 F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.Properties.Resources.resources
 F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmReportHDB.resources
 F:\do an c#\GUI\GUI\obj\Debug\GUI.csproj.GenerateResource.Cache
+F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmNhanVien.resources
+F:\do an c#\GUI\GUI\obj\Debug\QuanLyCuaHangDienThoai.frmNCC.resources
+F:\do an c#\GUI\GUI\obj\Debug\GUI.csprojResolveAssemblyReference.cache
 F:\do an c#\GUI\GUI\obj\Debug\RdlCompile.cache
 F:\do an c#\GUI\GUI\obj\Debug\RdlCompile.compiled

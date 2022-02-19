@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Configs>
+	<Config>
+		<server>ADMIN\SQLEXPRESS</server>
+		<db>CuaHangDienThoai</db>
+		<user>sa</user>
+		<pass>trannhonhoa</pass>
+	</Config>
+</Configs>

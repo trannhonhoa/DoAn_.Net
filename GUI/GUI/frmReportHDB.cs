@@ -29,7 +29,7 @@ namespace QuanLyCuaHangDienThoai
         {
 
             SqlConnection conn = new SqlConnection("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=CuaHangDienThoai; User = sa; password=trannhonhoa; Integrated Security=True");
-            SqlDataAdapter adapter = new SqlDataAdapter("select MaSp, SLBan, DonGiaBan, ThanhTienBan from CHITIETHDBAN where mahd = '"+MaHD+"'", conn);
+            SqlDataAdapter adapter = new SqlDataAdapter("select sp.tensp, ct.MaSp, SLBan, DonGiaBan, ThanhTienBan from CHITIETHDBAN as ct, SanPham as sp where ct.masp = sp.masp and mahd = '"+MaHD+"'", conn);
             DataSet ds = new DataSet();
             adapter.Fill(ds, "HD");
             this.reportHoaDonBan.LocalReport.ReportEmbeddedResource = "QuanLyCuaHangDienThoai.ReportHDB.rdlc";

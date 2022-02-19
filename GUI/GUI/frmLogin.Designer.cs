@@ -29,32 +29,20 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
-            this.lbexit = new System.Windows.Forms.Label();
             this.lbclear = new System.Windows.Forms.Label();
             this.btnlogin = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtpass = new System.Windows.Forms.TextBox();
-            this.txtusername = new System.Windows.Forms.TextBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.txtusername = new System.Windows.Forms.TextBox();
+            this.txtpass = new System.Windows.Forms.TextBox();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lbexit
-            // 
-            this.lbexit.AutoSize = true;
-            this.lbexit.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.lbexit.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbexit.ForeColor = System.Drawing.SystemColors.MenuHighlight;
-            this.lbexit.Location = new System.Drawing.Point(152, 287);
-            this.lbexit.Name = "lbexit";
-            this.lbexit.Size = new System.Drawing.Size(35, 15);
-            this.lbexit.TabIndex = 19;
-            this.lbexit.Text = "EXIT";
             // 
             // lbclear
             // 
@@ -78,7 +66,7 @@
             this.btnlogin.Location = new System.Drawing.Point(107, 240);
             this.btnlogin.Name = "btnlogin";
             this.btnlogin.Size = new System.Drawing.Size(131, 35);
-            this.btnlogin.TabIndex = 17;
+            this.btnlogin.TabIndex = 2;
             this.btnlogin.Text = "LOGIN";
             this.btnlogin.UseVisualStyleBackColor = false;
             this.btnlogin.Click += new System.EventHandler(this.btnlogin_Click);
@@ -98,25 +86,6 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(203, 1);
             this.panel1.TabIndex = 15;
-            // 
-            // txtpass
-            // 
-            this.txtpass.Location = new System.Drawing.Point(98, 178);
-            this.txtpass.Multiline = true;
-            this.txtpass.Name = "txtpass";
-            this.txtpass.PasswordChar = '*';
-            this.txtpass.Size = new System.Drawing.Size(179, 22);
-            this.txtpass.TabIndex = 14;
-            this.txtpass.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtpass_KeyPress);
-            // 
-            // txtusername
-            // 
-            this.txtusername.Location = new System.Drawing.Point(97, 135);
-            this.txtusername.Multiline = true;
-            this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(179, 22);
-            this.txtusername.TabIndex = 33;
-            this.txtusername.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtusername_KeyPress);
             // 
             // pictureBox3
             // 
@@ -148,18 +117,48 @@
             this.pictureBox1.TabIndex = 10;
             this.pictureBox1.TabStop = false;
             // 
+            // txtusername
+            // 
+            this.txtusername.Location = new System.Drawing.Point(97, 131);
+            this.txtusername.Name = "txtusername";
+            this.txtusername.Size = new System.Drawing.Size(169, 26);
+            this.txtusername.TabIndex = 0;
+            // 
+            // txtpass
+            // 
+            this.txtpass.Location = new System.Drawing.Point(97, 178);
+            this.txtpass.Name = "txtpass";
+            this.txtpass.PasswordChar = '*';
+            this.txtpass.Size = new System.Drawing.Size(169, 26);
+            this.txtpass.TabIndex = 1;
+            // 
+            // btnExit
+            // 
+            this.btnExit.BackColor = System.Drawing.SystemColors.Menu;
+            this.btnExit.DialogResult = System.Windows.Forms.DialogResult.Cancel;
+            this.btnExit.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.btnExit.Location = new System.Drawing.Point(119, 289);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(101, 28);
+            this.btnExit.TabIndex = 19;
+            this.btnExit.Text = "Exit";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
+            // 
             // frmLogin
             // 
+            this.AcceptButton = this.btnlogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(351, 329);
-            this.Controls.Add(this.lbexit);
+            this.Controls.Add(this.btnExit);
+            this.Controls.Add(this.txtpass);
+            this.Controls.Add(this.txtusername);
             this.Controls.Add(this.lbclear);
             this.Controls.Add(this.btnlogin);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Controls.Add(this.txtpass);
-            this.Controls.Add(this.txtusername);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.pictureBox1);
@@ -168,6 +167,7 @@
             this.Name = "frmLogin";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmLogin";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.frmLogin_FormClosed);
             this.Load += new System.EventHandler(this.frmLogin_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
@@ -179,15 +179,15 @@
 
         #endregion
 
-        private System.Windows.Forms.Label lbexit;
         private System.Windows.Forms.Label lbclear;
         private System.Windows.Forms.Button btnlogin;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.TextBox txtpass;
-        private System.Windows.Forms.TextBox txtusername;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.TextBox txtusername;
+        private System.Windows.Forms.TextBox txtpass;
+        private System.Windows.Forms.Button btnExit;
     }
 }

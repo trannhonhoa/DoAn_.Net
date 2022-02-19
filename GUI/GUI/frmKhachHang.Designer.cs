@@ -56,7 +56,7 @@
             // 
             // dgKhachHang
             // 
-            this.dgKhachHang.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dgKhachHang.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgKhachHang.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgKhachHang.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgKhachHang.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
@@ -69,7 +69,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.SystemColors.Control;
+            this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel3.Controls.Add(this.txtTenKH);
             this.panel3.Controls.Add(this.txtDienThoai);
             this.panel3.Controls.Add(this.txtDiaChi);
@@ -102,7 +102,7 @@
             this.txtDienThoai.Location = new System.Drawing.Point(129, 103);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(880, 27);
-            this.txtDienThoai.TabIndex = 1;
+            this.txtDienThoai.TabIndex = 3;
             // 
             // txtDiaChi
             // 
@@ -112,7 +112,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(129, 72);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(880, 27);
-            this.txtDiaChi.TabIndex = 1;
+            this.txtDiaChi.TabIndex = 2;
             // 
             // txtMaKH
             // 
@@ -122,7 +122,7 @@
             this.txtMaKH.Location = new System.Drawing.Point(129, 6);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(880, 27);
-            this.txtMaKH.TabIndex = 1;
+            this.txtMaKH.TabIndex = 0;
             // 
             // label5
             // 
@@ -181,6 +181,7 @@
             // 
             // btnThemMoi
             // 
+            this.btnThemMoi.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.btnThemMoi.Dock = System.Windows.Forms.DockStyle.Left;
             this.btnThemMoi.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnThemMoi.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._1Them;
@@ -191,7 +192,7 @@
             this.btnThemMoi.TabIndex = 0;
             this.btnThemMoi.Text = "Thêm Mới";
             this.btnThemMoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnThemMoi.UseVisualStyleBackColor = true;
+            this.btnThemMoi.UseVisualStyleBackColor = false;
             this.btnThemMoi.Click += new System.EventHandler(this.btnThemMoi_Click);
             // 
             // btnXoa
@@ -211,7 +212,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.SystemColors.Control;
+            this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel2.Controls.Add(this.txtTimKiem);
             this.panel2.Controls.Add(this.btnTimKiem);
             this.panel2.Controls.Add(this.btnHuy);
@@ -290,7 +291,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.SystemColors.Control;
+            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);

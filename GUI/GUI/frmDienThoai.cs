@@ -14,26 +14,35 @@ namespace QuanLyCuaHangDienThoai
 {
     public partial class frmDienThoai : Form
     {
-        
-        public frmDienThoai()
-        {
-            InitializeComponent();
-           
-            
-        }
-        
-        private void frmDienThoai_Load(object sender, EventArgs e)
-        {
-            LoadSanPham();
-            LoadDanhMuc();
-            LoadDefault();
-        }
+        public string userName { get; set; }
+        public string per { get; set; }
         BLL_SanPham bllsp = new BLL_SanPham();
         BLL_NhaCungCap bllncc = new BLL_NhaCungCap();
         BLL_NhomSanPham bllnsp = new BLL_NhomSanPham();
         BLL_CTHDB bllcthd = new BLL_CTHDB();
         SanPham sp = new SanPham();
         CTHDB cthd = new CTHDB();
+        Writelog wlg = new Writelog(); 
+        public frmDienThoai(string userName, string per)
+        {
+            this.userName = userName;
+            this.per = per;
+            InitializeComponent();
+           
+            
+        }
+        private void frmDienThoai_Load(object sender, EventArgs e)
+        {
+            LoadSanPham();
+            LoadDanhMuc();
+            LoadDefault();
+            wlg.WriteLog(userName, "SanPham", "Xem", "dgv_SanPham" );
+            if (int.Parse(this.per) == 2)
+            {
+                btnThemMoi.Enabled = false;
+            }
+        }
+       
         private void DisableElemnts(){
             btnThemMoi.Enabled = true;
             btnLuu.Enabled = false;
@@ -78,6 +87,7 @@ namespace QuanLyCuaHangDienThoai
             DisableElemnts();
             cmbNhom.SelectedIndex = 0;
             cmbNCC.SelectedIndex = 0;
+            radTKTenSP.Checked = true;
         }
         private void LoadDanhMuc(){
             cmbNCC.DataSource = bllncc.GetData("");
@@ -90,6 +100,7 @@ namespace QuanLyCuaHangDienThoai
         }
         private void LoadSanPham()
         {
+           
             dgSanPham.DataSource = bllsp.GetData("");
             if (dgSanPham.Rows.Count <= 0) return;
             dgSanPham.Columns["masp"].HeaderText = "Mã Sản Phẩm";
@@ -124,7 +135,7 @@ namespace QuanLyCuaHangDienThoai
             dgSanPham.Columns["mancc"].HeaderText = "Mã NCC";
             dgSanPham.Columns["mancc"].Width = 100;
             dgSanPham.Columns["mancc"].Visible = true;
-
+           
             
 
         }
@@ -136,6 +147,7 @@ namespace QuanLyCuaHangDienThoai
                 EnbleElements();
                 txtMaSanPham.Focus();
                 flagCheck = true;
+                
         }
        
         private void btnLuu_Click(object sender, EventArgs e)
@@ -189,12 +201,14 @@ namespace QuanLyCuaHangDienThoai
             sp.GiaNhap = gianhap;
             sp.MaNhom = cmbNhom.SelectedValue.ToString();
             sp.MaNCC = cmbNCC.SelectedValue.ToString();
-
+           
             if (flagCheck)
             {
                 if (bllsp.GetData("where masp = '"+sp.MaSP+"'") != null)
                 {
-                    MessageBox.Show("Sản phẩm đã tồn tại", "Thông báo"); return;
+                    MessageBox.Show("Sản phẩm đã tồn tại!", "Thông báo");
+                    
+                    return;
                 }
                 else
                 {
@@ -203,6 +217,7 @@ namespace QuanLyCuaHangDienThoai
 
                         bllsp.AddData(sp);
                         MessageBox.Show("Thêm thành công", "Thông báo");
+                        wlg.WriteLog(userName, "SanPham", "Them", sp.TenSP);
                         btnHuy.PerformClick();
                     }
                     catch (Exception)
@@ -217,6 +232,7 @@ namespace QuanLyCuaHangDienThoai
                 try
                 {
                     bllsp.EditData(sp);
+                    wlg.WriteLog(userName, "SanPham", "Sua", sp.TenSP);
                     MessageBox.Show("Sửa Thành Công", "Thông báo");
                     btnHuy.PerformClick();
                     
@@ -232,7 +248,7 @@ namespace QuanLyCuaHangDienThoai
             LoadSanPham();
            
         }
-
+        
         private void btnHuy_Click(object sender, EventArgs e)
         {
             Resettext();
@@ -240,14 +256,23 @@ namespace QuanLyCuaHangDienThoai
             pos = -1;
             btnThemMoi.Enabled = true;
             LoadSanPham();
+            if (int.Parse(this.per) == 2)
+            {
+                btnThemMoi.Enabled = false;
+            }
             
         }
 
         private void dgSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             pos = e.RowIndex;
-            if (pos == -1) { return; }
+            if (pos == -1 || pos == dgSanPham.Rows.Count - 1) { return; }
             AfterClickCell();
+            if (int.Parse(this.per) == 2)
+            {
+                btnXoa.Enabled = false;
+                btnSua.Enabled = false;
+            }
             DataRow row = (dgSanPham.Rows[pos].DataBoundItem as DataRowView).Row;
             txtMaSanPham.Text = row[0].ToString();
             cmbNhom.SelectedValue = row[1].ToString();
@@ -298,6 +323,7 @@ namespace QuanLyCuaHangDienThoai
                     bllcthd.DeleteAllData(cthd);
                     bllsp.DeleteData(sp);
                     MessageBox.Show("Xóa Thành Công", "Thông báo");
+                    wlg.WriteLog(userName, "SanPham", "Xoa", sp.MaSP);
                     LoadSanPham();
                     pos = -1;
                     Resettext();
@@ -318,10 +344,19 @@ namespace QuanLyCuaHangDienThoai
             {
                 MessageBox.Show("Hãy nhập tên sản phẩm cần tìm", "Thông báo"); return;
             }
+            DataTable dt = null;
             try
             {
-                sp.TenSP = txtTimKiem.Text.Trim();
-                DataTable dt = bllsp.GetData("where tensp like '%" + sp.TenSP + "%'");
+                if (radTKTenSP.Checked == true)
+                {
+                    sp.TenSP = txtTimKiem.Text.Trim();
+                    dt = bllsp.GetData("where tensp like '%" + sp.TenSP + "%'");
+                }
+                else if (radTKloaiSP.Checked == true)
+                {
+                    sp.TenSP = txtTimKiem.Text.Trim();
+                    dt = bllsp.GetData("where masp like '%" + sp.TenSP + "%'");
+                }
                 if(dt == null){
                     MessageBox.Show("Không tìm thấy sản phẩm", "Thông báo"); return;
                 }
@@ -334,10 +369,53 @@ namespace QuanLyCuaHangDienThoai
             }
             btnHuy.Enabled = true;
            
+           
         }
         private void gb1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnThemAnh_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnXoaAnh_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void backgroundWorkerSanPham_DoWork(object sender, DoWorkEventArgs e)
+        {
+           
+           
+
+               
+               
+          
+        }
+
+        private void backgroundWorkerSanPham_ProgressChanged(object sender, ProgressChangedEventArgs e)
+        {
+            
+        }
+
+        private void backgroundWorkerSanPham_RunWorkerCompleted(object sender, RunWorkerCompletedEventArgs e)
+        {
+           
+           
+            
         }
         
 

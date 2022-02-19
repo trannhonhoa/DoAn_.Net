@@ -11,7 +11,37 @@ namespace DAL
     public class DataProvider
     {
         public SqlConnection conn = null;
-        string strConn = @"Data Source=ADMIN\SQLEXPRESS;Initial Catalog=CuaHangDienThoai; User = sa; password=trannhonhoa; Integrated Security=True";
+        string path = (AppDomain.CurrentDomain.BaseDirectory + "config.xml");
+        string strConn = "";
+        public DataProvider()
+        {
+            loadDataConfig();
+        }
+        private void loadDataConfig()
+        {
+            try
+            {
+               
+                DataSet dataSet = new DataSet();
+                dataSet.ReadXml(path);
+                DataTable dt = new DataTable();
+                dt = dataSet.Tables["Config"];
+                foreach (DataRow dr in dt.Rows)
+                {
+                    
+                    var server = dr["server"].ToString();
+                    var db = dr["db"].ToString();
+                    var user = dr["user"].ToString();
+                    var pass = dr["pass"].ToString();
+                    strConn = @"Data Source="+server+";Initial Catalog="+db+"; User = "+user+"; password="+pass+"; Integrated Security=True";
+                }
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
+        
         public void OpenConnection()
         {
             if (conn == null)
@@ -83,5 +113,6 @@ namespace DAL
             return ketqua;
         }
        
+
     }
 }

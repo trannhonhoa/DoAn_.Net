@@ -281,6 +281,8 @@ namespace QuanLyCuaHangDienThoai {
             
             private global::System.Data.DataColumn columnMaSP;
             
+            private global::System.Data.DataColumn columnTenSP;
+            
             private global::System.Data.DataColumn columnSLBan;
             
             private global::System.Data.DataColumn columnDonGiaBan;
@@ -325,6 +327,14 @@ namespace QuanLyCuaHangDienThoai {
             public global::System.Data.DataColumn MaSPColumn {
                 get {
                     return this.columnMaSP;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public global::System.Data.DataColumn TenSPColumn {
+                get {
+                    return this.columnTenSP;
                 }
             }
             
@@ -389,10 +399,11 @@ namespace QuanLyCuaHangDienThoai {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
-            public ChitiethoadonRow AddChitiethoadonRow(string MaSP, string SLBan, string DonGiaBan, string ThanhTienBan) {
+            public ChitiethoadonRow AddChitiethoadonRow(string MaSP, string TenSP, string SLBan, string DonGiaBan, string ThanhTienBan) {
                 ChitiethoadonRow rowChitiethoadonRow = ((ChitiethoadonRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         MaSP,
+                        TenSP,
                         SLBan,
                         DonGiaBan,
                         ThanhTienBan};
@@ -419,6 +430,7 @@ namespace QuanLyCuaHangDienThoai {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             internal void InitVars() {
                 this.columnMaSP = base.Columns["MaSP"];
+                this.columnTenSP = base.Columns["TenSP"];
                 this.columnSLBan = base.Columns["SLBan"];
                 this.columnDonGiaBan = base.Columns["DonGiaBan"];
                 this.columnThanhTienBan = base.Columns["ThanhTienBan"];
@@ -429,6 +441,8 @@ namespace QuanLyCuaHangDienThoai {
             private void InitClass() {
                 this.columnMaSP = new global::System.Data.DataColumn("MaSP", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnMaSP);
+                this.columnTenSP = new global::System.Data.DataColumn("TenSP", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnTenSP);
                 this.columnSLBan = new global::System.Data.DataColumn("SLBan", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSLBan);
                 this.columnDonGiaBan = new global::System.Data.DataColumn("DonGiaBan", typeof(string), null, global::System.Data.MappingType.Element);
@@ -593,6 +607,22 @@ namespace QuanLyCuaHangDienThoai {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public string TenSP {
+                get {
+                    try {
+                        return ((string)(this[this.tableChitiethoadon.TenSPColumn]));
+                    }
+                    catch (global::System.InvalidCastException e) {
+                        throw new global::System.Data.StrongTypingException("The value for column \'TenSP\' in table \'Chitiethoadon\' is DBNull.", e);
+                    }
+                }
+                set {
+                    this[this.tableChitiethoadon.TenSPColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public string SLBan {
                 get {
                     try {
@@ -649,6 +679,18 @@ namespace QuanLyCuaHangDienThoai {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
             public void SetMaSPNull() {
                 this[this.tableChitiethoadon.MaSPColumn] = global::System.Convert.DBNull;
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public bool IsTenSPNull() {
+                return this.IsNull(this.tableChitiethoadon.TenSPColumn);
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "4.0.0.0")]
+            public void SetTenSPNull() {
+                this[this.tableChitiethoadon.TenSPColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]

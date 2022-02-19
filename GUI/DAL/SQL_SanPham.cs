@@ -14,12 +14,12 @@ namespace DAL
         // THÊM DỮ LIỆU
         public void AddData(SanPham ex)
         {
-            db.ExcuteReaderData(@"INSERT INTO SANPHAM (MaSP, MaNhom, TenSP, DonViTinh, SLTon, GiaBan, GiaNhap, MaNCC) VALUES (N'" + ex.MaSP + "',N'" + ex.MaNhom + "',N'" + ex.TenSP + "',N'" + ex.DonViTinh + "',N'" + ex.SLTon + "',N'" + ex.GiaBan + "',N'" + ex.GiaNhap + "',N'" + ex.MaNCC + "')");
+            db.ExcuteReaderData(@"INSERT INTO SANPHAM (MaSP, MaNhom, TenSP, DonViTinh, SLTon, GiaBan, GiaNhap, MaNCC) VALUES (N'" + ex.MaSP + "',N'" + ex.MaNhom + "',N'" + ex.TenSP + "',N'" + ex.DonViTinh + "',N'" + ex.SLTon + "',N'" + ex.GiaBan + "',N'" + ex.GiaNhap + "', N'" + ex.MaNCC + "')");
         }
         //  SỬA DỮ LIỆU
         public void EditData(SanPham ex)
         {
-            db.ExcuteReaderData(@"UPDATE SANPHAM  SET  MaNhom =N'" + ex.MaNhom + "', TenSP =N'" + ex.TenSP + "', DonViTinh =N'" + ex.DonViTinh + "', SLTon =N'" + ex.SLTon + "', GiaBan =N'" + ex.GiaBan + "', GiaNhap =N'" + ex.GiaNhap + "', MaNCC=N'" + ex.MaNCC + "' Where MaSP=N'" + ex.MaSP + "'");
+            db.ExcuteReaderData(@"UPDATE SANPHAM  SET  MaNhom =N'" + ex.MaNhom + "', TenSP =N'" + ex.TenSP + "', DonViTinh = N'" + ex.DonViTinh + "', SLTon =N'" + ex.SLTon + "', GiaBan =N'" + ex.GiaBan + "', GiaNhap =N'" + ex.GiaNhap + "', MaNCC=N'" + ex.MaNCC + "' Where MaSP=N'" + ex.MaSP + "'");
         }
         public void EditSL(SanPham ex)
         {

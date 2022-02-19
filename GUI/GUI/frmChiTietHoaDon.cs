@@ -150,7 +150,7 @@ namespace QuanLyCuaHangDienThoai
         private void dgCTHDB_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             pos = e.RowIndex;
-            if (pos == -1) { return; }
+            if (pos == -1 || pos == dgCTHDB.Rows.Count - 1) { return; }
             AfterClickCell();
             DataRow row = (dgCTHDB.Rows[pos].DataBoundItem as DataRowView).Row;
             cmbSoHD.Text = row[0].ToString();

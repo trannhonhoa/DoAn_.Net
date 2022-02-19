@@ -12,6 +12,9 @@
               <Width>1.29167in</Width>
             </TablixColumn>
             <TablixColumn>
+              <Width>1in</Width>
+            </TablixColumn>
+            <TablixColumn>
               <Width>1.17833in</Width>
             </TablixColumn>
             <TablixColumn>
@@ -72,6 +75,36 @@
                         </Paragraph>
                       </Paragraphs>
                       <rd:DefaultName>Textbox6</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
+                    <Textbox Name="Textbox1">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>Tên Sản Phẩm</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>Textbox1</rd:DefaultName>
                       <Style>
                         <Border>
                           <Color>LightGrey</Color>
@@ -251,6 +284,36 @@
                 </TablixCell>
                 <TablixCell>
                   <CellContents>
+                    <Textbox Name="TenSP">
+                      <CanGrow>true</CanGrow>
+                      <KeepTogether>true</KeepTogether>
+                      <Paragraphs>
+                        <Paragraph>
+                          <TextRuns>
+                            <TextRun>
+                              <Value>=Fields!TenSP.Value</Value>
+                              <Style />
+                            </TextRun>
+                          </TextRuns>
+                          <Style />
+                        </Paragraph>
+                      </Paragraphs>
+                      <rd:DefaultName>TenSP</rd:DefaultName>
+                      <Style>
+                        <Border>
+                          <Color>LightGrey</Color>
+                          <Style>Solid</Style>
+                        </Border>
+                        <PaddingLeft>2pt</PaddingLeft>
+                        <PaddingRight>2pt</PaddingRight>
+                        <PaddingTop>2pt</PaddingTop>
+                        <PaddingBottom>2pt</PaddingBottom>
+                      </Style>
+                    </Textbox>
+                  </CellContents>
+                </TablixCell>
+                <TablixCell>
+                  <CellContents>
                     <Textbox Name="SLBan">
                       <CanGrow>true</CanGrow>
                       <KeepTogether>true</KeepTogether>
@@ -350,6 +413,7 @@
             <TablixMember />
             <TablixMember />
             <TablixMember />
+            <TablixMember />
           </TablixMembers>
         </TablixColumnHierarchy>
         <TablixRowHierarchy>
@@ -363,10 +427,10 @@
           </TablixMembers>
         </TablixRowHierarchy>
         <DataSetName>DataSet1</DataSetName>
-        <Top>0.36333in</Top>
+        <Top>0.4271in</Top>
         <Left>0.26958in</Left>
         <Height>1.36458in</Height>
-        <Width>6.23042in</Width>
+        <Width>7.23042in</Width>
         <Style>
           <Border>
             <Style>None</Style>
@@ -388,8 +452,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox18</rd:DefaultName>
-        <Top>2.07167in</Top>
-        <Left>4.90625in</Left>
+        <Top>2.12848in</Top>
+        <Left>4.80208in</Left>
         <Height>0.29167in</Height>
         <Width>0.86458in</Width>
         <ZIndex>1</ZIndex>
@@ -418,8 +482,8 @@
           </Paragraph>
         </Paragraphs>
         <rd:DefaultName>Textbox19</rd:DefaultName>
-        <Top>2.11333in</Top>
-        <Left>3.5625in</Left>
+        <Top>2.17014in</Top>
+        <Left>3.45833in</Left>
         <Height>0.25in</Height>
         <Width>1in</Width>
         <ZIndex>2</ZIndex>
@@ -437,7 +501,7 @@
     <Height>2.97917in</Height>
     <Style />
   </Body>
-  <Width>6.67708in</Width>
+  <Width>7.5in</Width>
   <Page>
     <PageHeader>
       <Height>0.86458in</Height>
@@ -663,6 +727,10 @@
           <DataField>MaSP</DataField>
           <rd:TypeName>System.String</rd:TypeName>
         </Field>
+        <Field Name="TenSP">
+          <DataField>TenSP</DataField>
+          <rd:TypeName>System.String</rd:TypeName>
+        </Field>
         <Field Name="SLBan">
           <DataField>SLBan</DataField>
           <rd:TypeName>System.String</rd:TypeName>
@@ -678,7 +746,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSetHoaDonBan</rd:DataSetName>
-        <rd:SchemaPath>E:\do an c#\GUI\GUI\DataSetHoaDonBan.xsd</rd:SchemaPath>
+        <rd:SchemaPath>F:\do an c#\GUI\GUI\DataSetHoaDonBan.xsd</rd:SchemaPath>
         <rd:TableName>Chitiethoadon</rd:TableName>
         <rd:TableAdapterFillMethod />
         <rd:TableAdapterGetDataMethod />

@@ -132,3 +132,16 @@ begin
 	update SANPHAM set SanPham.SLTon = SANPHAM.SLTon + deleted.SLBan from deleted
 	where SANPHAM.MaSP = deleted.MaSP
 end
+
+
+use CuaHangDienThoai
+
+SELECT CONVERT(VARCHAR(32), HashBytes('MD5', 'http://laptrinhvb.net'), 2) as md5
+SELECT CONVERT(VARCHAR(32), HashBytes('MD5', 'http://laptrinhvb.net'), 2) as md5
+
+select EncryptedData = EncryptByPassPhrase('123','admin' )
+select  convert(varchar(50), password, 2) from LOGIN
+select * from LOGIN where username = 'nhonhoa' and password = CONVERT(varchar(50), HashBytes('md5', 'nhonhoa'), 2)
+insert into LOGIN(username, password, per) values('admin', CONVERT(varchar(50), HashBytes('MD5', 'admin'), 2), 0)
+
+select convert(varchar(100), DecryptByPassPhrase('123', 0x010000002D5220450E3271B2EFB935C736FF3ABD5C5552AE33022552)) as giaima
