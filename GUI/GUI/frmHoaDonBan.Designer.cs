@@ -72,14 +72,14 @@
             // 
             this.dgHoaDon.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgHoaDon.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgHoaDon.Dock = System.Windows.Forms.DockStyle.Top;
+            this.dgHoaDon.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgHoaDon.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dgHoaDon.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
             this.dgHoaDon.Location = new System.Drawing.Point(0, 324);
             this.dgHoaDon.Name = "dgHoaDon";
             this.dgHoaDon.ReadOnly = true;
             this.dgHoaDon.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgHoaDon.Size = new System.Drawing.Size(897, 169);
+            this.dgHoaDon.Size = new System.Drawing.Size(897, 229);
             this.dgHoaDon.TabIndex = 24;
             this.dgHoaDon.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHoaDon_CellClick);
             this.dgHoaDon.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgHoaDon_CellDoubleClick);
@@ -443,14 +443,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(897, 489);
+            this.ClientSize = new System.Drawing.Size(897, 553);
             this.Controls.Add(this.dgHoaDon);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmHoaDonBan";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "HoaDonBan";
             this.Load += new System.EventHandler(this.frmHoaDonBan_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgHoaDon)).EndInit();

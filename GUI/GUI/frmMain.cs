@@ -151,6 +151,11 @@ namespace QuanLyCuaHangDienThoai
         SqlConnection conn = new SqlConnection("Data Source=ADMIN\\SQLEXPRESS;Initial Catalog=CuaHangDienThoai; User = sa; password=trannhonhoa; Integrated Security=True");
         private void backupToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (int.Parse(Per) == 1 || int.Parse(Per) == 2)
+            {
+                MessageBox.Show("Bạn không có quyền này!");
+                return;
+            }
             FolderBrowserDialog dlg = new FolderBrowserDialog();
             if (dlg.ShowDialog() == DialogResult.OK)
             {
@@ -175,6 +180,11 @@ namespace QuanLyCuaHangDienThoai
 
         private void restoreToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (int.Parse(Per) == 1 || int.Parse(Per) == 2)
+            {
+                MessageBox.Show("Bạn không có quyền này!");
+                return;
+            }
             OpenFileDialog dlg = new OpenFileDialog();
             dlg.Filter = "SQL SERVER database backup files|*.bak";
             dlg.Title = "Data restore";
@@ -203,6 +213,11 @@ namespace QuanLyCuaHangDienThoai
                 }
                 conn.Close();
             }
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
 
 

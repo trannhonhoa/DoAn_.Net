@@ -12,5 +12,6 @@ namespace DTO
         public string TenKH { get; set; }
         public string SDTKH { get; set; }
         public string DiaChiKH { get; set; }
+        public int action { get; set; }
     }
 }

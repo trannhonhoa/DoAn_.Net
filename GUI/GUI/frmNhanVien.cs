@@ -27,6 +27,7 @@ namespace QuanLyCuaHangDienThoai
             LoadNhanVien();
             LoadDefault();
         }
+       
         private void DisableElemnts()
         {
             btnThemMoi.Enabled = true;
@@ -173,7 +174,7 @@ namespace QuanLyCuaHangDienThoai
             lg.password = txtpassword.Text;
             lg.per = cmbLoaiNV.SelectedIndex;
             lg.manv = txtMaNV.Text;
-            
+
             if (flagCheck)
             {
                 if (bllnv.GetData("where NhanVien.manv = '" + nv.MaNV + "'") != null)

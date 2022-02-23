@@ -33,6 +33,8 @@
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gb1 = new System.Windows.Forms.GroupBox();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.ProgressBarSanPham = new System.Windows.Forms.ToolStripProgressBar();
             this.cmbNCC = new System.Windows.Forms.ComboBox();
             this.txtGiaBan = new System.Windows.Forms.TextBox();
             this.txtGiaNhap = new System.Windows.Forms.TextBox();
@@ -64,17 +66,15 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.backgroundWorkerSanPham = new System.ComponentModel.BackgroundWorker();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.ProgressBarSanPham = new System.Windows.Forms.ToolStripProgressBar();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gb1.SuspendLayout();
+            this.statusStrip1.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgSanPham)).BeginInit();
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
-            this.statusStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -84,7 +84,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1088, 77);
+            this.panel1.Size = new System.Drawing.Size(1269, 77);
             this.panel1.TabIndex = 0;
             // 
             // lbimgpath
@@ -106,7 +106,7 @@
             this.label1.ForeColor = System.Drawing.Color.Blue;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1088, 77);
+            this.label1.Size = new System.Drawing.Size(1269, 77);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH MỤC SẢN PHẨM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -117,7 +117,7 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 77);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(358, 421);
+            this.panel2.Size = new System.Drawing.Size(358, 550);
             this.panel2.TabIndex = 1;
             // 
             // gb1
@@ -144,11 +144,26 @@
             this.gb1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb1.Location = new System.Drawing.Point(0, 0);
             this.gb1.Name = "gb1";
-            this.gb1.Size = new System.Drawing.Size(358, 421);
+            this.gb1.Size = new System.Drawing.Size(358, 550);
             this.gb1.TabIndex = 0;
             this.gb1.TabStop = false;
             this.gb1.Text = "Thông Tin Chi Tiết Sản Phẩm";
             this.gb1.Enter += new System.EventHandler(this.gb1_Enter);
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.ProgressBarSanPham});
+            this.statusStrip1.Location = new System.Drawing.Point(3, 521);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(352, 26);
+            this.statusStrip1.TabIndex = 25;
+            this.statusStrip1.Text = "statusStrip1";
+            // 
+            // ProgressBarSanPham
+            // 
+            this.ProgressBarSanPham.Name = "ProgressBarSanPham";
+            this.ProgressBarSanPham.Size = new System.Drawing.Size(150, 20);
             // 
             // cmbNCC
             // 
@@ -287,7 +302,7 @@
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel3.Location = new System.Drawing.Point(358, 77);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(730, 421);
+            this.panel3.Size = new System.Drawing.Size(911, 550);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -301,7 +316,7 @@
             this.dgSanPham.Name = "dgSanPham";
             this.dgSanPham.ReadOnly = true;
             this.dgSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSanPham.Size = new System.Drawing.Size(730, 245);
+            this.dgSanPham.Size = new System.Drawing.Size(911, 374);
             this.dgSanPham.TabIndex = 1;
             this.dgSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSanPham_CellClick);
             this.dgSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSanPham_CellContentClick);
@@ -313,7 +328,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(730, 176);
+            this.panel4.Size = new System.Drawing.Size(911, 176);
             this.panel4.TabIndex = 0;
             // 
             // groupBox2
@@ -462,34 +477,19 @@
             this.backgroundWorkerSanPham.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSanPham_ProgressChanged);
             this.backgroundWorkerSanPham.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSanPham_RunWorkerCompleted);
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.ProgressBarSanPham});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 392);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(352, 26);
-            this.statusStrip1.TabIndex = 25;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // ProgressBarSanPham
-            // 
-            this.ProgressBarSanPham.Name = "ProgressBarSanPham";
-            this.ProgressBarSanPham.Size = new System.Drawing.Size(150, 20);
-            // 
             // frmDienThoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSeaGreen;
-            this.ClientSize = new System.Drawing.Size(1088, 498);
+            this.ClientSize = new System.Drawing.Size(1269, 627);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmDienThoai";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDienThoai";
             this.Load += new System.EventHandler(this.frmDienThoai_Load);
             this.panel1.ResumeLayout(false);
@@ -497,14 +497,14 @@
             this.panel2.ResumeLayout(false);
             this.gb1.ResumeLayout(false);
             this.gb1.PerformLayout();
+            this.statusStrip1.ResumeLayout(false);
+            this.statusStrip1.PerformLayout();
             this.panel3.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgSanPham)).EndInit();
             this.panel4.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
-            this.statusStrip1.ResumeLayout(false);
-            this.statusStrip1.PerformLayout();
             this.ResumeLayout(false);
 
         }
