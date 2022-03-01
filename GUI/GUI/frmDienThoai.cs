@@ -22,7 +22,9 @@ namespace QuanLyCuaHangDienThoai
         BLL_CTHDB bllcthd = new BLL_CTHDB();
         SanPham sp = new SanPham();
         CTHDB cthd = new CTHDB();
-        Writelog wlg = new Writelog(); 
+        Writelog wlg = new Writelog();
+        List<SanPham> spAction = new List<SanPham>();
+        bool undoingDelete = false; bool undoingUpdate = false;
         public frmDienThoai(string userName, string per)
         {
             this.userName = userName;
@@ -147,6 +149,7 @@ namespace QuanLyCuaHangDienThoai
                 EnbleElements();
                 txtMaSanPham.Focus();
                 flagCheck = true;
+                undoingDelete = false;
                 
         }
        
@@ -193,6 +196,7 @@ namespace QuanLyCuaHangDienThoai
             {
                 MessageBox.Show("Giá nhập phải là số"); return;
             }
+            SanPham sp = new SanPham();
             sp.MaSP = txtMaSanPham.Text;
             sp.TenSP = txtTenSanPham.Text;
             sp.DonViTinh = txtDonViTinh.Text;
@@ -202,7 +206,7 @@ namespace QuanLyCuaHangDienThoai
             sp.MaNhom = cmbNhom.SelectedValue.ToString();
             sp.MaNCC = cmbNCC.SelectedValue.ToString();
            
-            if (flagCheck)
+            if (flagCheck == true && !undoingDelete)
             {
                 if (bllsp.GetData("where masp = '"+sp.MaSP+"'") != null)
                 {
@@ -214,7 +218,8 @@ namespace QuanLyCuaHangDienThoai
                 {
                     try
                     {
-
+                        sp.action = 1;
+                        spAction.Add(sp);
                         bllsp.AddData(sp);
                         MessageBox.Show("Thêm thành công", "Thông báo");
                         wlg.WriteLog(userName, "SanPham", "Them", sp.TenSP);
@@ -227,10 +232,32 @@ namespace QuanLyCuaHangDienThoai
                 }
                 
             }
-            else
+            else if (undoingDelete)
+            {
+                sp.action = 1;
+                spAction.Add(sp);
+                bllsp.AddData(sp);
+                btnHuy.PerformClick();
+            }
+            else if(!flagCheck && !undoingUpdate) 
             {
                 try
                 {
+                    if (pos != -1)
+                    {
+                        DataRow row = (dgSanPham.Rows[pos].DataBoundItem as DataRowView).Row;
+                        SanPham sp1 = new SanPham();
+                        sp1.MaSP = row[0].ToString();
+                        sp1.TenSP = row[2].ToString();
+                        sp1.MaNhom = row[1].ToString();
+                        sp1.DonViTinh = row[3].ToString();
+                        sp1.SLTon = int.Parse(row[4].ToString());
+                        sp1.GiaBan = int.Parse(row[5].ToString());
+                        sp1.GiaNhap = int.Parse(row[6].ToString());
+                        sp1.MaNCC = row[7].ToString();
+                        sp1.action = 3;
+                        spAction.Add(sp1);
+                    }
                     bllsp.EditData(sp);
                     wlg.WriteLog(userName, "SanPham", "Sua", sp.TenSP);
                     MessageBox.Show("Sửa Thành Công", "Thông báo");
@@ -242,6 +269,11 @@ namespace QuanLyCuaHangDienThoai
 
                     MessageBox.Show("Lỗi không sửa được", "Thống báo");
                 }
+            }
+            else if (undoingUpdate)
+            {
+                bllsp.EditData(sp);
+                btnHuy.PerformClick();
             }
             pos = -1;
             Resettext();
@@ -305,35 +337,57 @@ namespace QuanLyCuaHangDienThoai
             btnLuu.Enabled = true;
             flagCheck = false;
             EnbleElements();
+            undoingUpdate = false;
             txtMaSanPham.Enabled = false;
         }
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-            if (pos == -1) { return; } 
-            DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa ?","Cho suy nghĩ lại lần nữa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
-            if(ret == DialogResult.Yes){
-                AfterClickCell();
-                DataRow row = (dgSanPham.Rows[pos].DataBoundItem as DataRowView).Row;
-                SanPham sp = new SanPham();
-                sp.MaSP = row[0].ToString();
-                try
-                {
-                    cthd.MaSP = sp.MaSP;
-                    bllcthd.DeleteAllData(cthd);
-                    bllsp.DeleteData(sp);
-                    MessageBox.Show("Xóa Thành Công", "Thông báo");
-                    wlg.WriteLog(userName, "SanPham", "Xoa", sp.MaSP);
-                    LoadSanPham();
-                    pos = -1;
-                    Resettext();
-                    DisableElemnts();
-                }
-                catch (Exception)
-                {
 
-                    MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+            AfterClickCell();
+            SanPham sp = new SanPham();
+            if(pos != -1){
+                DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa ?", "Cho suy nghĩ lại lần nữa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ret == DialogResult.Yes)
+                {
+                    DataRow row = (dgSanPham.Rows[pos].DataBoundItem as DataRowView).Row;
+
+                    sp.MaSP = row[0].ToString();
+                    sp.TenSP = row[2].ToString();
+                    sp.MaNhom = row[1].ToString();
+                    sp.DonViTinh = row[3].ToString();
+                    sp.SLTon = int.Parse(row[4].ToString());
+                    sp.GiaBan = int.Parse(row[5].ToString());
+                    sp.GiaNhap = int.Parse(row[6].ToString());
+                    sp.MaNCC = row[7].ToString();
+                    try
+                    {
+                        sp.action = 2;
+                        spAction.Add(sp);
+                        bllsp.DeleteData(sp);
+                        MessageBox.Show("Xóa Thành Công", "Thông báo");
+                        wlg.WriteLog(userName, "SanPham", "Xoa", sp.MaSP);
+                        LoadSanPham();
+                        pos = -1;
+                        Resettext();
+                        DisableElemnts();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+                    }
                 }
+                
+            }
+
+            else if (txtMaSanPham.Text != "")
+            {
+                sp.MaSP = txtMaSanPham.Text;
+                bllsp.DeleteData(sp);
+                LoadSanPham();
+                Resettext();
+                DisableElemnts();
             }
             
         }
@@ -416,6 +470,55 @@ namespace QuanLyCuaHangDienThoai
            
            
             
+        }
+
+        private void btnUndo_Click(object sender, EventArgs e)
+        {
+            if (spAction.Count > 0)
+            {
+                pos = -1;
+                if (spAction[spAction.Count - 1].action == 1)
+                {
+                    txtMaSanPham.Text = spAction[spAction.Count - 1].MaSP;
+                    spAction.Remove(spAction[spAction.Count - 1]);
+                    btnXoa.Enabled = true;
+                    btnXoa.PerformClick();
+                }
+                else if (spAction[spAction.Count - 1].action == 2)
+                {
+                    undoingDelete = true;
+                    undoingUpdate = false;
+                    var sp = spAction[spAction.Count - 1];
+                    txtMaSanPham.Text = sp.MaSP;
+                    txtTenSanPham.Text = sp.TenSP;
+                    cmbNhom.SelectedItem = sp.MaNhom;
+                    txtDonViTinh.Text = sp.DonViTinh;
+                    txtGiaBan.Text = sp.GiaBan.ToString();
+                    txtGiaNhap.Text = sp.GiaNhap.ToString();
+                    cmbNCC.SelectedItem = sp.MaNCC;
+                    txtSoLuong.Text = sp.SLTon.ToString();
+                    spAction.Remove(spAction[spAction.Count - 1]);
+                    btnLuu.Enabled = true;
+                    btnLuu.PerformClick();
+                }
+                else if (spAction[spAction.Count - 1].action == 3)
+                {
+                    undoingDelete = false;
+                    undoingUpdate = true;
+                    var sp = spAction[spAction.Count - 1];
+                    txtMaSanPham.Text = sp.MaSP;
+                    txtTenSanPham.Text = sp.TenSP;
+                    cmbNhom.SelectedItem = sp.MaNhom;
+                    txtDonViTinh.Text = sp.DonViTinh;
+                    txtGiaBan.Text = sp.GiaBan.ToString();
+                    txtGiaNhap.Text = sp.GiaNhap.ToString();
+                    cmbNCC.SelectedItem = sp.MaNCC;
+                    txtSoLuong.Text = sp.SLTon.ToString();
+                    spAction.Remove(spAction[spAction.Count - 1]);
+                    btnLuu.Enabled = true;
+                    btnLuu.PerformClick();
+                }
+            }
         }
         
 

@@ -21,5 +21,7 @@ namespace DTO
         public int GiaBan { get; set; }
 
         public int GiaNhap { get; set; }
+
+        public int action { get; set; }
     }
 }

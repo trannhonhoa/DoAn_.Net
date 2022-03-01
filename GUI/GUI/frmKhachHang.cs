@@ -170,7 +170,7 @@ namespace QuanLyCuaHangDienThoai
                 catch (Exception)
                 {
 
-                    MessageBox.Show("Undo Fail !", "Thông báo");
+                    throw;
                 }
             }
             else if(flagCheck == false && !undoingUpdate)
@@ -229,32 +229,38 @@ namespace QuanLyCuaHangDienThoai
         }
         private void btxoa_Click(object sender, EventArgs e)
         {
+            
             AfterClickCell();
             KhachHang kh = new KhachHang();
             if(pos != -1){
-                DataRow row = (dgKhachHang.Rows[pos].DataBoundItem as DataRowView).Row;
-
-               
-                kh.MaKH = row[0].ToString();
-                kh.TenKH = row[1].ToString();
-                kh.DiaChiKH = row[2].ToString();
-                kh.SDTKH = row[3].ToString();
-                try
+                DialogResult ret = MessageBox.Show("Bạn có chắc muốn xóa ?", "Cho suy nghĩ lại lần nữa", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (ret == DialogResult.Yes)
                 {
-                    kh.action = 2;   
-                    khAction.Add(kh);
-                    bllkh.DeleteData(kh);
-                    MessageBox.Show("Xóa Thành Công", "Thông báo");
-                    LoadKhacHang();
-                    pos = -1;
-                    Resettext();
-                    DisableElemnts();
-                }
-                catch (Exception)
-                {
+                    DataRow row = (dgKhachHang.Rows[pos].DataBoundItem as DataRowView).Row;
 
-                    MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+
+                    kh.MaKH = row[0].ToString();
+                    kh.TenKH = row[1].ToString();
+                    kh.DiaChiKH = row[2].ToString();
+                    kh.SDTKH = row[3].ToString();
+                    try
+                    {
+                        kh.action = 2;
+                        khAction.Add(kh);
+                        bllkh.DeleteData(kh);
+                        MessageBox.Show("Xóa Thành Công", "Thông báo");
+                        LoadKhacHang();
+                        pos = -1;
+                        Resettext();
+                        DisableElemnts();
+                    }
+                    catch (Exception)
+                    {
+
+                        MessageBox.Show("Lỗi! Không thể xóa", "Thông báo");
+                    }
                 }
+                
 
             }
             if (txtMaKH.Text != "")
@@ -318,8 +324,8 @@ namespace QuanLyCuaHangDienThoai
            
             if (khAction.Count > 0)
             {
-                MessageBox.Show(khAction[khAction.Count - 1].action+"");
-               
+
+                pos = -1;
                 if ( khAction[khAction.Count - 1].action == 1)
                 {
                     txtMaKH.Text = khAction[khAction.Count - 1].MaKH;

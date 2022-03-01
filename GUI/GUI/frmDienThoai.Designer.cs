@@ -66,6 +66,7 @@
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.backgroundWorkerSanPham = new System.ComponentModel.BackgroundWorker();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.gb1.SuspendLayout();
@@ -392,6 +393,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnUndo);
             this.groupBox1.Controls.Add(this.btnXoa);
             this.groupBox1.Controls.Add(this.btnThemMoi);
             this.groupBox1.Controls.Add(this.btnHuy);
@@ -477,6 +479,19 @@
             this.backgroundWorkerSanPham.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSanPham_ProgressChanged);
             this.backgroundWorkerSanPham.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSanPham_RunWorkerCompleted);
             // 
+            // btnUndo
+            // 
+            this.btnUndo.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.undo__3_;
+            this.btnUndo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUndo.Location = new System.Drawing.Point(215, 78);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(84, 43);
+            this.btnUndo.TabIndex = 5;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            // 
             // frmDienThoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
@@ -549,5 +564,6 @@
         private System.ComponentModel.BackgroundWorker backgroundWorkerSanPham;
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar ProgressBarSanPham;
+        private System.Windows.Forms.Button btnUndo;
     }
 }
