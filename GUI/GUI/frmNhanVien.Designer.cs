@@ -79,12 +79,12 @@
             this.dgNhanVien.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgNhanVien.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgNhanVien.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(185)))), ((int)(((byte)(226)))), ((int)(((byte)(238)))));
-            this.dgNhanVien.Location = new System.Drawing.Point(336, 233);
+            this.dgNhanVien.Location = new System.Drawing.Point(329, 233);
             this.dgNhanVien.Margin = new System.Windows.Forms.Padding(4);
             this.dgNhanVien.Name = "dgNhanVien";
             this.dgNhanVien.ReadOnly = true;
             this.dgNhanVien.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgNhanVien.Size = new System.Drawing.Size(903, 332);
+            this.dgNhanVien.Size = new System.Drawing.Size(910, 332);
             this.dgNhanVien.TabIndex = 24;
             this.dgNhanVien.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgNhanVien_CellClick);
             // 
@@ -94,10 +94,10 @@
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(336, 73);
+            this.panel3.Location = new System.Drawing.Point(329, 73);
             this.panel3.Margin = new System.Windows.Forms.Padding(4);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(903, 160);
+            this.panel3.Size = new System.Drawing.Size(910, 160);
             this.panel3.TabIndex = 23;
             // 
             // groupBox2
@@ -248,31 +248,32 @@
             // 
             this.lbtencv.AutoSize = true;
             this.lbtencv.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbtencv.Location = new System.Drawing.Point(171, 444);
+            this.lbtencv.Location = new System.Drawing.Point(125, 464);
             this.lbtencv.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.lbtencv.Name = "lbtencv";
             this.lbtencv.Size = new System.Drawing.Size(33, 19);
             this.lbtencv.TabIndex = 2;
             this.lbtencv.Text = "----";
+            this.lbtencv.Click += new System.EventHandler(this.lbtencv_Click);
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
             this.panel2.Controls.Add(this.groupBox3);
-            this.panel2.Controls.Add(this.cmbLoaiNV);
-            this.panel2.Controls.Add(this.label10);
-            this.panel2.Controls.Add(this.lbtencv);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 73);
             this.panel2.Margin = new System.Windows.Forms.Padding(4);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(336, 492);
+            this.panel2.Size = new System.Drawing.Size(329, 492);
             this.panel2.TabIndex = 22;
             // 
             // groupBox3
             // 
             this.groupBox3.Controls.Add(this.txtpassword);
+            this.groupBox3.Controls.Add(this.lbtencv);
+            this.groupBox3.Controls.Add(this.cmbLoaiNV);
             this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.txtusername);
             this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.dtpNgaySinh);
@@ -290,10 +291,11 @@
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Fill;
             this.groupBox3.Location = new System.Drawing.Point(0, 0);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(336, 492);
+            this.groupBox3.Size = new System.Drawing.Size(329, 492);
             this.groupBox3.TabIndex = 9;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Thông tin";
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
             // 
             // txtpassword
             // 
@@ -303,7 +305,7 @@
             this.txtpassword.Location = new System.Drawing.Point(129, 369);
             this.txtpassword.Margin = new System.Windows.Forms.Padding(4);
             this.txtpassword.Name = "txtpassword";
-            this.txtpassword.Size = new System.Drawing.Size(199, 27);
+            this.txtpassword.Size = new System.Drawing.Size(192, 27);
             this.txtpassword.TabIndex = 21;
             // 
             // label9
@@ -325,7 +327,7 @@
             this.txtusername.Location = new System.Drawing.Point(129, 320);
             this.txtusername.Margin = new System.Windows.Forms.Padding(4);
             this.txtusername.Name = "txtusername";
-            this.txtusername.Size = new System.Drawing.Size(199, 27);
+            this.txtusername.Size = new System.Drawing.Size(192, 27);
             this.txtusername.TabIndex = 20;
             // 
             // label8
@@ -347,7 +349,7 @@
             this.dtpNgaySinh.Location = new System.Drawing.Point(129, 169);
             this.dtpNgaySinh.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgaySinh.Name = "dtpNgaySinh";
-            this.dtpNgaySinh.Size = new System.Drawing.Size(199, 27);
+            this.dtpNgaySinh.Size = new System.Drawing.Size(192, 27);
             this.dtpNgaySinh.TabIndex = 17;
             // 
             // cmbGioiTinh
@@ -361,7 +363,7 @@
             this.cmbGioiTinh.Location = new System.Drawing.Point(129, 120);
             this.cmbGioiTinh.Margin = new System.Windows.Forms.Padding(4);
             this.cmbGioiTinh.Name = "cmbGioiTinh";
-            this.cmbGioiTinh.Size = new System.Drawing.Size(199, 27);
+            this.cmbGioiTinh.Size = new System.Drawing.Size(192, 27);
             this.cmbGioiTinh.TabIndex = 12;
             // 
             // txtDiaChi
@@ -372,7 +374,7 @@
             this.txtDiaChi.Location = new System.Drawing.Point(129, 270);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(199, 27);
+            this.txtDiaChi.Size = new System.Drawing.Size(192, 27);
             this.txtDiaChi.TabIndex = 19;
             // 
             // txtTenNV
@@ -383,7 +385,7 @@
             this.txtTenNV.Location = new System.Drawing.Point(129, 71);
             this.txtTenNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenNV.Name = "txtTenNV";
-            this.txtTenNV.Size = new System.Drawing.Size(199, 27);
+            this.txtTenNV.Size = new System.Drawing.Size(192, 27);
             this.txtTenNV.TabIndex = 9;
             // 
             // txtPhone
@@ -394,7 +396,7 @@
             this.txtPhone.Location = new System.Drawing.Point(129, 217);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(4);
             this.txtPhone.Name = "txtPhone";
-            this.txtPhone.Size = new System.Drawing.Size(199, 27);
+            this.txtPhone.Size = new System.Drawing.Size(192, 27);
             this.txtPhone.TabIndex = 18;
             // 
             // txtMaNV
@@ -405,7 +407,7 @@
             this.txtMaNV.Location = new System.Drawing.Point(129, 18);
             this.txtMaNV.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaNV.Name = "txtMaNV";
-            this.txtMaNV.Size = new System.Drawing.Size(199, 27);
+            this.txtMaNV.Size = new System.Drawing.Size(192, 27);
             this.txtMaNV.TabIndex = 8;
             // 
             // label5
@@ -482,17 +484,17 @@
             "Admin",
             "Kho",
             "Bán Hàng"});
-            this.cmbLoaiNV.Location = new System.Drawing.Point(129, 425);
+            this.cmbLoaiNV.Location = new System.Drawing.Point(129, 422);
             this.cmbLoaiNV.Margin = new System.Windows.Forms.Padding(4);
             this.cmbLoaiNV.Name = "cmbLoaiNV";
-            this.cmbLoaiNV.Size = new System.Drawing.Size(199, 27);
+            this.cmbLoaiNV.Size = new System.Drawing.Size(193, 27);
             this.cmbLoaiNV.TabIndex = 8;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(4, 433);
+            this.label10.Location = new System.Drawing.Point(7, 425);
             this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(67, 19);
@@ -543,7 +545,6 @@
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
-            this.panel2.PerformLayout();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.panel1.ResumeLayout(false);

@@ -5,7 +5,12 @@
       "ProjectGuid": "5f81296e-8283-4274-bda9-5b1cad0d01b7",
       "DisplayName": "GUI",
       "ColorIndex": 0
+    },
+    "4c0c882f-c8bb-44fb-a0ac-05ecf985d6e1": {
+      "ProjectGuid": "4c0c882f-c8bb-44fb-a0ac-05ecf985d6e1",
+      "DisplayName": "BLL",
+      "ColorIndex": 1
     }
   },
-  "NextColorIndex": 1
+  "NextColorIndex": 2
 }

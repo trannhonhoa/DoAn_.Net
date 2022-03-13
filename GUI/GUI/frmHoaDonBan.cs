@@ -13,8 +13,15 @@ namespace QuanLyCuaHangDienThoai
 {
     public partial class frmHoaDonBan : Form
     {
-        public frmHoaDonBan()
+       
+        public string userName { get; set; }
+        public string per { get; set; }
+        public string manv { get; set; }
+        public frmHoaDonBan(string per, string userName, string manv = null)
         {
+            this.userName = userName;
+            this.per = per;
+            this.manv = manv;
             InitializeComponent();
         }
         BLL_HoaDonBan bllhdb = new BLL_HoaDonBan();
@@ -24,6 +31,7 @@ namespace QuanLyCuaHangDienThoai
         HoaDonBan hdb = new HoaDonBan();
         CTHDB cthd = new CTHDB();
         bool flagCheck; int pos = -1;
+       
         private void frmHoaDonBan_Load(object sender, EventArgs e)
         {
             LoadHoaDon();
@@ -191,6 +199,11 @@ namespace QuanLyCuaHangDienThoai
             }
             else
             {
+                if (bllhdb.GetData(" where mahd = '" + hdb.MaHD + "' and manv = '" + this.manv + "'") == null)
+                {
+                    MessageBox.Show("Không có quyền này!", "Thông báo");
+                    return;
+                }
                 try
                 {
                     bllhdb.EditData(hdb);
@@ -237,9 +250,15 @@ namespace QuanLyCuaHangDienThoai
             if (ret == DialogResult.OK)
             {
             if (pos == -1 || pos == dgHoaDon.Rows.Count - 1) return;
+
             DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
            
             hdb.MaHD = row[0].ToString();
+            if (bllhdb.GetData(" where mahd = '" + hdb.MaHD + "' and manv = '"+this.manv+"'") == null)
+            {
+                MessageBox.Show("Không có quyền này!", "Thông báo");
+                return;
+            }
             try
             {
                 cthd.MaHD = hdb.MaHD;

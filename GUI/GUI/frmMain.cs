@@ -22,6 +22,7 @@ namespace QuanLyCuaHangDienThoai
         }
         public string Per { get; set; }
         public string NameUser { get; set; }
+        public string Manv { get; set; }
         Writelog wlg = new Writelog();
         private void frmMain_Load(object sender, EventArgs e)
         {
@@ -36,7 +37,7 @@ namespace QuanLyCuaHangDienThoai
         {
             frmDienThoai dt = new frmDienThoai(this.NameUser, this.Per);
             dt.Show();
-         
+            
 
         }
 
@@ -59,7 +60,7 @@ namespace QuanLyCuaHangDienThoai
                 MessageBox.Show("Bạn không có quyền này!");
                 return;
             }
-            frmHoaDonBan fr = new frmHoaDonBan();
+            frmHoaDonBan fr = new frmHoaDonBan(this.Per, this.NameUser, this.Manv);
             fr.Show();
         }
 

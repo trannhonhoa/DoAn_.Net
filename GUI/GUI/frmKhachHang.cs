@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using DTO;
 using BLL;
+using System.IO;
+using COMExcel = Microsoft.Office.Interop.Excel;
 namespace QuanLyCuaHangDienThoai
 {
     public partial class frmKhachHang : Form
@@ -21,6 +23,7 @@ namespace QuanLyCuaHangDienThoai
         BLL_KhachHang bllkh = new BLL_KhachHang();
         KhachHang kh = new KhachHang();
         bool flagCheck; int pos = -1; bool undoingDelete = false; bool undoingUpdate = false;
+        bool import = false;
         private void frmKhachHang_Load(object sender, EventArgs e)
         {
             LoadKhacHang();
@@ -113,19 +116,22 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnLuu_Click(object sender, EventArgs e)
         {
-            if (txtMaKH.Text == "")
+            if (!import)
             {
-                MessageBox.Show("Hãy nhập mã khách hàng", "Thông báo"); return;
-            }
-            if (txtTenKH.Text == "")
-            {
-                MessageBox.Show("Hãy nhập tên khách hàng", "Thông báo"); return;
-            } if (txtDiaChi.Text == "")
-            {
-                MessageBox.Show("Hãy nhập địa chỉ khách hàng", "Thông báo"); return;
-            } if (txtDienThoai.Text == "")
-            {
-                MessageBox.Show("Hãy nhập tên khách hàng", "Thông báo"); return;
+                if (txtMaKH.Text == "")
+                {
+                    MessageBox.Show("Hãy nhập mã khách hàng", "Thông báo"); return;
+                }
+                if (txtTenKH.Text == "")
+                {
+                    MessageBox.Show("Hãy nhập tên khách hàng", "Thông báo"); return;
+                } if (txtDiaChi.Text == "")
+                {
+                    MessageBox.Show("Hãy nhập địa chỉ khách hàng", "Thông báo"); return;
+                } if (txtDienThoai.Text == "")
+                {
+                    MessageBox.Show("Hãy nhập tên khách hàng", "Thông báo"); return;
+                }
             }
             KhachHang kh = new KhachHang();
             kh.MaKH = txtMaKH.Text;
@@ -173,7 +179,7 @@ namespace QuanLyCuaHangDienThoai
                     throw;
                 }
             }
-            else if(flagCheck == false && !undoingUpdate)
+            else if(flagCheck == false && !undoingUpdate && !import)
             {    
               
                     try
@@ -205,7 +211,44 @@ namespace QuanLyCuaHangDienThoai
                     btnHuy.PerformClick();
                
             }
+            else if (import)
+            {
+                for (int i = 0; i < dgKhachHang.Rows.Count -1; i++)
+                {
+                    DataRow row = (dgKhachHang.Rows[i].DataBoundItem as DataRowView).Row;
+                    KhachHang khImport = new KhachHang();
+                    khImport.MaKH = row[0].ToString();
+                    khImport.TenKH = row[1].ToString();
+                    khImport.DiaChiKH = row[2].ToString();
+                    khImport.SDTKH = row[3].ToString();
+                    if (bllkh.GetData("where makh = '" + khImport.MaKH + "'") != null)
+                    {
+                        continue;
+                    }
+                    else
+                    {
+                        try
+                        {
+                            khImport.action = 1;
+                            khAction.Add(khImport);
+                            bllkh.AddData(khImport);        
+                          
+                        }
+                        catch (Exception)
+                        {
+
+                            MessageBox.Show("Lỗi! Không thêm được", "Thông báo");
+                        }
+                    }
+
+
+                }
+                btnHuy.PerformClick();
+                MessageBox.Show("Thêm thành công ", "Thông báo");
+                btnLuu.Enabled = false;
+            }
             pos = -1;
+            import = false;
             LoadKhacHang();
             Resettext();
         }
@@ -366,6 +409,81 @@ namespace QuanLyCuaHangDienThoai
         private void panel2_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+        private DataTable oTbl;
+        private string fileName;
+        private void readExcel()
+        {
+            if (fileName == null)
+            {
+                MessageBox.Show("Bạn chưa chọn file excel");
+                return;
+            }
+            COMExcel.Application excelApp = new COMExcel.Application();
+            try
+            {
+                excelApp.Workbooks.Open(fileName);
+            }
+            catch{
+                MessageBox.Show("Khong the mo file du lieu");
+            }
+            oTbl = new DataTable();
+            oTbl.Columns.Add("MaNV", typeof(string));
+            oTbl.Columns.Add("TenNV", typeof(string));
+            oTbl.Columns.Add("DiaChi", typeof(string));
+            oTbl.Columns.Add("SoDT", typeof(string));
+
+            foreach (COMExcel.Worksheet WSheet in excelApp.Worksheets)
+            {
+                DataRow dr = oTbl.NewRow();
+                long i = 1;
+                try
+                {
+                    do
+                    {
+                        if (WSheet.Range["A" + i].Value == null && WSheet.Range["B" + i].Value == null && WSheet.Range["C" + i].Value == null && WSheet.Range["D" + i].Value == null)
+                        {
+                            break;
+                        }
+                        dr = oTbl.NewRow();
+                        dr["MaNV"] = WSheet.Range["A" + i].Value;
+                        dr["TenNV"] = WSheet.Range["B" + i].Value;
+                        dr["DiaChi"] = WSheet.Range["C" + i].Value;
+                        dr["SoDT"] = WSheet.Range["D" + i].Value;
+                        oTbl.Rows.Add(dr);
+                        i++;
+                    } while (true);
+                }
+                catch
+                {
+                    MessageBox.Show("Co loi khi thuc hien");
+                }
+            }
+
+        }
+        private void btnImport_Click(object sender, EventArgs e)
+        {
+            OpenFileDialog ofd = new OpenFileDialog();
+            ofd.Filter = "excel file |*.xls;*.xlsx";
+            ofd.FilterIndex = 1;
+            ofd.RestoreDirectory = true;
+            ofd.Multiselect = false;
+            ofd.Title = "Chọn file excel";
+            if (ofd.ShowDialog() == DialogResult.OK)
+            {
+                fileName = ofd.FileName;
+                readExcel();
+                if (ofd != null)
+                {
+                    dgKhachHang.DataSource = oTbl;
+                }
+                else
+                {
+                    MessageBox.Show("Không có dữ liệu");
+                }
+            }
+            import = true;
+            btnLuu.Enabled = true;
         }
     }
 }

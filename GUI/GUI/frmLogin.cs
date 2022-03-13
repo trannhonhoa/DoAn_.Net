@@ -46,6 +46,7 @@ namespace QuanLyCuaHangDienThoai
                     this.Hide();
                     fr.Per = dt.Rows[0][2].ToString();
                     fr.NameUser = dt.Rows[0][0].ToString();
+                    fr.Manv = dt.Rows[0][3].ToString();
                     fr.Show();
                     string path = (AppDomain.CurrentDomain.BaseDirectory + "LogFile.txt");
                     if (!System.IO.File.Exists(path))
