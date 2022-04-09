@@ -405,6 +405,27 @@
   <ItemGroup>
     <None Include="Resources\import.jpg" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\picPhonePng.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\tai-sao-nen-mua-iphone-13-3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinh-nen-background-dep-1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\images.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-full-hd-dep_110637776.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lamp.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\5e78affab2547d678e4c5458dd931381.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

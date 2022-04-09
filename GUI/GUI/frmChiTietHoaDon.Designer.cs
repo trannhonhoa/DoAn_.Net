@@ -283,7 +283,7 @@
             // 
             // panel4
             // 
-            this.panel4.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.cmbSoHD);
             this.panel4.Controls.Add(this.cmbMaSP);
@@ -325,7 +325,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnQuayLai);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
@@ -352,7 +352,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::QuanLyCuaHangDienThoai.Properties.Resources.background_full_hd_dep_110637776;
             this.ClientSize = new System.Drawing.Size(850, 560);
             this.Controls.Add(this.dgCTHDB);
             this.Controls.Add(this.panel2);

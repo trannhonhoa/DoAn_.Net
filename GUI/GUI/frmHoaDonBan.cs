@@ -254,7 +254,7 @@ namespace QuanLyCuaHangDienThoai
             DataRow row = (dgHoaDon.Rows[pos].DataBoundItem as DataRowView).Row;
            
             hdb.MaHD = row[0].ToString();
-            if (bllhdb.GetData(" where mahd = '" + hdb.MaHD + "' and manv = '"+this.manv+"'") == null)
+            if (bllhdb.GetData(" where mahd = '" + hdb.MaHD + "' and manv = '" + this.manv + "'") == null && int.Parse(per) != 0)
             {
                 MessageBox.Show("Không có quyền này!", "Thông báo");
                 return;

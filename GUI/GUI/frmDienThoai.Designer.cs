@@ -28,8 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.lbimgpath = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.gb1 = new System.Windows.Forms.GroupBox();
@@ -60,14 +58,15 @@
             this.btnTimKiem = new System.Windows.Forms.Button();
             this.txtTimKiem = new System.Windows.Forms.TextBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnUndo = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThemMoi = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.backgroundWorkerSanPham = new System.ComponentModel.BackgroundWorker();
-            this.btnUndo = new System.Windows.Forms.Button();
-            this.panel1.SuspendLayout();
+            this.lbimgpath = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2.SuspendLayout();
             this.gb1.SuspendLayout();
             this.statusStrip1.SuspendLayout();
@@ -76,54 +75,35 @@
             this.panel4.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
+            this.panel1.SuspendLayout();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.lbimgpath);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(1269, 77);
-            this.panel1.TabIndex = 0;
-            // 
-            // lbimgpath
-            // 
-            this.lbimgpath.AutoSize = true;
-            this.lbimgpath.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbimgpath.Location = new System.Drawing.Point(7, 55);
-            this.lbimgpath.Name = "lbimgpath";
-            this.lbimgpath.Size = new System.Drawing.Size(94, 19);
-            this.lbimgpath.TabIndex = 3;
-            this.lbimgpath.Text = "C:\\\\temp.jpg";
-            this.lbimgpath.Visible = false;
             // 
             // label1
             // 
-            this.label1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Blue;
+            this.label1.ForeColor = System.Drawing.Color.IndianRed;
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(1269, 77);
+            this.label1.Size = new System.Drawing.Size(1269, 90);
             this.label1.TabIndex = 0;
             this.label1.Text = "DANH MỤC SẢN PHẨM";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // panel2
             // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.gb1);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 77);
+            this.panel2.Location = new System.Drawing.Point(0, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(358, 550);
+            this.panel2.Size = new System.Drawing.Size(358, 537);
             this.panel2.TabIndex = 1;
             // 
             // gb1
             // 
-            this.gb1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.gb1.BackColor = System.Drawing.Color.Transparent;
             this.gb1.Controls.Add(this.statusStrip1);
             this.gb1.Controls.Add(this.cmbNCC);
             this.gb1.Controls.Add(this.txtGiaBan);
@@ -145,7 +125,7 @@
             this.gb1.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gb1.Location = new System.Drawing.Point(0, 0);
             this.gb1.Name = "gb1";
-            this.gb1.Size = new System.Drawing.Size(358, 550);
+            this.gb1.Size = new System.Drawing.Size(358, 537);
             this.gb1.TabIndex = 0;
             this.gb1.TabStop = false;
             this.gb1.Text = "Thông Tin Chi Tiết Sản Phẩm";
@@ -155,7 +135,7 @@
             // 
             this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ProgressBarSanPham});
-            this.statusStrip1.Location = new System.Drawing.Point(3, 521);
+            this.statusStrip1.Location = new System.Drawing.Point(3, 508);
             this.statusStrip1.Name = "statusStrip1";
             this.statusStrip1.Size = new System.Drawing.Size(352, 26);
             this.statusStrip1.TabIndex = 25;
@@ -298,12 +278,13 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.dgSanPham);
             this.panel3.Controls.Add(this.panel4);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel3.Location = new System.Drawing.Point(358, 77);
+            this.panel3.Location = new System.Drawing.Point(358, 90);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(911, 550);
+            this.panel3.Size = new System.Drawing.Size(911, 537);
             this.panel3.TabIndex = 1;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
@@ -317,13 +298,14 @@
             this.dgSanPham.Name = "dgSanPham";
             this.dgSanPham.ReadOnly = true;
             this.dgSanPham.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgSanPham.Size = new System.Drawing.Size(911, 374);
+            this.dgSanPham.Size = new System.Drawing.Size(911, 361);
             this.dgSanPham.TabIndex = 1;
             this.dgSanPham.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSanPham_CellClick);
             this.dgSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgSanPham_CellContentClick);
             // 
             // panel4
             // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
             this.panel4.Controls.Add(this.groupBox2);
             this.panel4.Controls.Add(this.groupBox1);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
@@ -338,9 +320,10 @@
             this.groupBox2.Controls.Add(this.radTKTenSP);
             this.groupBox2.Controls.Add(this.btnTimKiem);
             this.groupBox2.Controls.Add(this.txtTimKiem);
-            this.groupBox2.Location = new System.Drawing.Point(438, 15);
+            this.groupBox2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox2.Location = new System.Drawing.Point(421, 0);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(399, 145);
+            this.groupBox2.Size = new System.Drawing.Size(399, 176);
             this.groupBox2.TabIndex = 34;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tìm kiếm";
@@ -399,12 +382,27 @@
             this.groupBox1.Controls.Add(this.btnHuy);
             this.groupBox1.Controls.Add(this.btnLuu);
             this.groupBox1.Controls.Add(this.btnSua);
-            this.groupBox1.Location = new System.Drawing.Point(11, 15);
+            this.groupBox1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.groupBox1.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.groupBox1.Location = new System.Drawing.Point(0, 0);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(421, 145);
+            this.groupBox1.Size = new System.Drawing.Size(421, 176);
             this.groupBox1.TabIndex = 6;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Thao tác";
+            // 
+            // btnUndo
+            // 
+            this.btnUndo.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.undo__3_;
+            this.btnUndo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnUndo.Location = new System.Drawing.Point(215, 78);
+            this.btnUndo.Name = "btnUndo";
+            this.btnUndo.Size = new System.Drawing.Size(84, 43);
+            this.btnUndo.TabIndex = 5;
+            this.btnUndo.Text = "Undo";
+            this.btnUndo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnUndo.UseVisualStyleBackColor = true;
+            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
             // 
             // btnXoa
             // 
@@ -479,24 +477,34 @@
             this.backgroundWorkerSanPham.ProgressChanged += new System.ComponentModel.ProgressChangedEventHandler(this.backgroundWorkerSanPham_ProgressChanged);
             this.backgroundWorkerSanPham.RunWorkerCompleted += new System.ComponentModel.RunWorkerCompletedEventHandler(this.backgroundWorkerSanPham_RunWorkerCompleted);
             // 
-            // btnUndo
+            // lbimgpath
             // 
-            this.btnUndo.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.undo__3_;
-            this.btnUndo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUndo.Location = new System.Drawing.Point(215, 78);
-            this.btnUndo.Name = "btnUndo";
-            this.btnUndo.Size = new System.Drawing.Size(84, 43);
-            this.btnUndo.TabIndex = 5;
-            this.btnUndo.Text = "Undo";
-            this.btnUndo.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnUndo.UseVisualStyleBackColor = true;
-            this.btnUndo.Click += new System.EventHandler(this.btnUndo_Click);
+            this.lbimgpath.AutoSize = true;
+            this.lbimgpath.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbimgpath.Location = new System.Drawing.Point(7, 55);
+            this.lbimgpath.Name = "lbimgpath";
+            this.lbimgpath.Size = new System.Drawing.Size(94, 19);
+            this.lbimgpath.TabIndex = 3;
+            this.lbimgpath.Text = "C:\\\\temp.jpg";
+            this.lbimgpath.Visible = false;
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.Controls.Add(this.lbimgpath);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(1269, 90);
+            this.panel1.TabIndex = 0;
             // 
             // frmDienThoai
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.LightSeaGreen;
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackgroundImage = global::QuanLyCuaHangDienThoai.Properties.Resources.background_full_hd_dep_110637776;
             this.ClientSize = new System.Drawing.Size(1269, 627);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
@@ -507,8 +515,6 @@
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmDienThoai";
             this.Load += new System.EventHandler(this.frmDienThoai_Load);
-            this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.gb1.ResumeLayout(false);
             this.gb1.PerformLayout();
@@ -520,13 +526,14 @@
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel3;
@@ -556,7 +563,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.Label lbimgpath;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.RadioButton radTKloaiSP;
         private System.Windows.Forms.RadioButton radTKTenSP;
@@ -565,5 +571,7 @@
         private System.Windows.Forms.StatusStrip statusStrip1;
         private System.Windows.Forms.ToolStripProgressBar ProgressBarSanPham;
         private System.Windows.Forms.Button btnUndo;
+        private System.Windows.Forms.Label lbimgpath;
+        private System.Windows.Forms.Panel panel1;
     }
 }

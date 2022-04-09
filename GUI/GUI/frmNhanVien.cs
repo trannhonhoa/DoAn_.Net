@@ -327,5 +327,11 @@ namespace QuanLyCuaHangDienThoai
         {
 
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+            this.BackColor = Color.LimeGreen;
+            this.TransparencyKey = Color.LimeGreen;
+        }
     }
 }

@@ -150,6 +150,7 @@
             this.AcceptButton = this.btnlogin;
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QuanLyCuaHangDienThoai.Properties.Resources.lamp;
             this.CancelButton = this.btnExit;
             this.ClientSize = new System.Drawing.Size(351, 329);
             this.Controls.Add(this.btnExit);

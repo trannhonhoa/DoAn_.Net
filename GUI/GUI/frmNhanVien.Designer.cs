@@ -45,7 +45,9 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.txtpassword = new System.Windows.Forms.TextBox();
+            this.cmbLoaiNV = new System.Windows.Forms.ComboBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.label10 = new System.Windows.Forms.Label();
             this.txtusername = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.dtpNgaySinh = new System.Windows.Forms.DateTimePicker();
@@ -60,8 +62,6 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.cmbLoaiNV = new System.Windows.Forms.ComboBox();
-            this.label10 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.dgNhanVien)).BeginInit();
@@ -90,7 +90,7 @@
             // 
             // panel3
             // 
-            this.panel3.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.groupBox2);
             this.panel3.Controls.Add(this.groupBox1);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -258,7 +258,7 @@
             // 
             // panel2
             // 
-            this.panel2.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.groupBox3);
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 73);
@@ -269,6 +269,7 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.BackColor = System.Drawing.Color.Transparent;
             this.groupBox3.Controls.Add(this.txtpassword);
             this.groupBox3.Controls.Add(this.lbtencv);
             this.groupBox3.Controls.Add(this.cmbLoaiNV);
@@ -308,6 +309,20 @@
             this.txtpassword.Size = new System.Drawing.Size(192, 27);
             this.txtpassword.TabIndex = 21;
             // 
+            // cmbLoaiNV
+            // 
+            this.cmbLoaiNV.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cmbLoaiNV.FormattingEnabled = true;
+            this.cmbLoaiNV.Items.AddRange(new object[] {
+            "Admin",
+            "Kho",
+            "Bán Hàng"});
+            this.cmbLoaiNV.Location = new System.Drawing.Point(129, 422);
+            this.cmbLoaiNV.Margin = new System.Windows.Forms.Padding(4);
+            this.cmbLoaiNV.Name = "cmbLoaiNV";
+            this.cmbLoaiNV.Size = new System.Drawing.Size(193, 27);
+            this.cmbLoaiNV.TabIndex = 8;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -318,6 +333,17 @@
             this.label9.Size = new System.Drawing.Size(74, 19);
             this.label9.TabIndex = 22;
             this.label9.Text = "Password";
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label10.Location = new System.Drawing.Point(7, 425);
+            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(67, 19);
+            this.label10.TabIndex = 7;
+            this.label10.Text = "Loại NV";
             // 
             // txtusername
             // 
@@ -476,36 +502,12 @@
             this.label2.TabIndex = 11;
             this.label2.Text = "Mã Nhân Viên";
             // 
-            // cmbLoaiNV
-            // 
-            this.cmbLoaiNV.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cmbLoaiNV.FormattingEnabled = true;
-            this.cmbLoaiNV.Items.AddRange(new object[] {
-            "Admin",
-            "Kho",
-            "Bán Hàng"});
-            this.cmbLoaiNV.Location = new System.Drawing.Point(129, 422);
-            this.cmbLoaiNV.Margin = new System.Windows.Forms.Padding(4);
-            this.cmbLoaiNV.Name = "cmbLoaiNV";
-            this.cmbLoaiNV.Size = new System.Drawing.Size(193, 27);
-            this.cmbLoaiNV.TabIndex = 8;
-            // 
-            // label10
-            // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Times New Roman", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(7, 425);
-            this.label10.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(67, 19);
-            this.label10.TabIndex = 7;
-            this.label10.Text = "Loại NV";
-            // 
             // label1
             // 
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Times New Roman", 20F, System.Drawing.FontStyle.Bold);
+            this.label1.ForeColor = System.Drawing.Color.Firebrick;
             this.label1.Location = new System.Drawing.Point(600, 15);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
@@ -515,7 +517,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.MediumTurquoise;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.label1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel1.Location = new System.Drawing.Point(0, 0);
@@ -528,6 +530,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::QuanLyCuaHangDienThoai.Properties.Resources.background_full_hd_dep_110637776;
             this.ClientSize = new System.Drawing.Size(1239, 565);
             this.Controls.Add(this.dgNhanVien);
             this.Controls.Add(this.panel3);

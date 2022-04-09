@@ -15,4 +15,15 @@ F:\do an c#\GUI\BLL\bin\Debug\DAL.pdb
 F:\do an c#\GUI\BLL\bin\Debug\DTO.pdb
 F:\do an c#\GUI\BLL\obj\Debug\BLL.dll
 F:\do an c#\GUI\BLL\obj\Debug\BLL.pdb
-F:\do an c#\GUI\BLL\obj\Debug\BLL.csprojResolveAssemblyReference.cache
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.ConnectionInfo.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.ConnectionInfoExtended.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.Smo.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.SmoExtended.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.Management.Sdk.Sfc.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.SqlEnum.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.Dmf.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.ServiceBrokerEnum.dll
+F:\do an c#\GUI\BLL\bin\Debug\Microsoft.SqlServer.RegSvrEnum.dll
+F:\do an c#\GUI\BLL\obj\Debug\BLL.csproj.AssemblyReference.cache
+F:\do an c#\GUI\BLL\obj\Debug\BLL.csproj.CoreCompileInputs.cache
+F:\do an c#\GUI\BLL\obj\Debug\BLL.csproj.CopyComplete

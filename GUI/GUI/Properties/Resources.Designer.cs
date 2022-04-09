@@ -153,6 +153,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _5e78affab2547d678e4c5458dd931381 {
+            get {
+                object obj = ResourceManager.GetObject("5e78affab2547d678e4c5458dd931381", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap _5g_1 {
             get {
                 object obj = ResourceManager.GetObject("5g-1", resourceCulture);
@@ -239,6 +249,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap background_2579719_960_720 {
             get {
                 object obj = ResourceManager.GetObject("background-2579719_960_720", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap background_full_hd_dep_110637776 {
+            get {
+                object obj = ResourceManager.GetObject("background-full-hd-dep_110637776", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -386,9 +406,29 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hinh_nen_background_dep_1 {
+            get {
+                object obj = ResourceManager.GetObject("hinh-nen-background-dep-1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_cancel_4 {
             get {
                 object obj = ResourceManager.GetObject("icon-cancel-4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap images {
+            get {
+                object obj = ResourceManager.GetObject("images", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -439,6 +479,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap invoice__1_ {
             get {
                 object obj = ResourceManager.GetObject("invoice (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap lamp {
+            get {
+                object obj = ResourceManager.GetObject("lamp", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -506,6 +556,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap picPhonePng {
+            get {
+                object obj = ResourceManager.GetObject("picPhonePng", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap restore {
             get {
                 object obj = ResourceManager.GetObject("restore", resourceCulture);
@@ -539,6 +599,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap sort_ascend {
             get {
                 object obj = ResourceManager.GetObject("sort_ascend", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap tai_sao_nen_mua_iphone_13_3 {
+            get {
+                object obj = ResourceManager.GetObject("tai-sao-nen-mua-iphone-13-3", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

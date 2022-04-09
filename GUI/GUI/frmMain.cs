@@ -142,6 +142,7 @@ namespace QuanLyCuaHangDienThoai
         private void progressToolStripMenuItem_Click(object sender, EventArgs e)
         {
             backgroundWorker1.RunWorkerAsync();  
+            
         }
 
         private void backgroundWorker1_ProgressChanged(object sender, ProgressChangedEventArgs e)
