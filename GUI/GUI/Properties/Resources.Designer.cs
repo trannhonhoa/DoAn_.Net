@@ -19,7 +19,7 @@ namespace QuanLyCuaHangDienThoai.Properties {
     // class via a tool like ResGen or Visual Studio.
     // To add or remove a member, edit your .ResX file then rerun ResGen
     // with the /str option, or rebuild your VS project.
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "4.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "16.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
@@ -176,6 +176,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap _5g_11 {
             get {
                 object obj = ResourceManager.GetObject("5g-11", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _868681 {
+            get {
+                object obj = ResourceManager.GetObject("868681", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -416,6 +426,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap hoadon {
+            get {
+                object obj = ResourceManager.GetObject("hoadon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_cancel_4 {
             get {
                 object obj = ResourceManager.GetObject("icon-cancel-4", resourceCulture);
@@ -629,6 +649,16 @@ namespace QuanLyCuaHangDienThoai.Properties {
         internal static System.Drawing.Bitmap thanh_toan {
             get {
                 object obj = ResourceManager.GetObject("thanh toan", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap thongke {
+            get {
+                object obj = ResourceManager.GetObject("thongke", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

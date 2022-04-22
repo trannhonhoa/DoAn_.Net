@@ -58,7 +58,6 @@
   <ItemGroup>
     <Compile Include="DataSetHoaDonBan.cs">
       <DependentUpon>DataSetHoaDonBan.xsd</DependentUpon>
-      <SubType>Component</SubType>
     </Compile>
     <Compile Include="DataSetHoaDonBan.Designer.cs">
       <AutoGen>True</AutoGen>
@@ -425,6 +424,15 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\5e78affab2547d678e4c5458dd931381.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\868681.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hoadon.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\thongke.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

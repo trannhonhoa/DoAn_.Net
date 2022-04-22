@@ -1,0 +1,14 @@
+Microsoft HTML Help Compiler 4.74.8702
+
+Compiling d:\heplerword\CHDTDD.chm
+
+
+Compile time: 0 minutes, 0 seconds
+3	Topics
+0	Local links
+0	Internet links
+0	Graphics
+
+
+Created d:\heplerword\CHDTDD.chm, 169,757 bytes
+Compression decreased file by 73,942 bytes.

@@ -138,6 +138,14 @@ namespace QuanLyCuaHangDienThoai
             dgSanPham.Columns["mancc"].Width = 100;
             dgSanPham.Columns["mancc"].Visible = true;
            
+            if(spAction.Count > 0)
+            {
+                btnUndo.Enabled = true;
+            }
+            else
+            {
+                btnUndo.Enabled = false;
+            }
             
 
         }
@@ -145,11 +153,11 @@ namespace QuanLyCuaHangDienThoai
         int pos = -1;
         private void btnThemMoi_Click(object sender, EventArgs e)
         {
-                       
-                EnbleElements();
-                txtMaSanPham.Focus();
-                flagCheck = true;
-                undoingDelete = false;
+              
+            EnbleElements();
+            txtMaSanPham.Focus();
+            flagCheck = true;
+            undoingDelete = false;
                 
         }
        
@@ -314,6 +322,7 @@ namespace QuanLyCuaHangDienThoai
             txtGiaBan.Text = row[5].ToString();
             txtGiaNhap.Text = row[6].ToString();
             cmbNCC.SelectedValue = row[7].ToString();
+            txtMaSanPham.Enabled = false;
             
         }
        

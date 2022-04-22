@@ -384,3 +384,56 @@
 4/8/2022	admin     	Login		
 4/8/2022	admin     	Login		
 4/8/2022	admin     	Login		
+4/15/2022	admin     	Login		
+4/15/2022	admin     	SanPham	Xem	dgv_SanPham
+4/15/2022	admin     	SanPham	Xem	dgv_SanPham
+4/15/2022	admin     	Login		
+4/15/2022	huy       	Login		
+4/15/2022	huy       	SanPham	Xem	dgv_SanPham
+4/15/2022	huy       	SanPham	Xem	dgv_SanPham
+4/15/2022	huy       	SanPham	Sua	Huawei Nova 2i
+4/15/2022	huy       	Logout		
+4/15/2022	admin     	Login		
+4/17/2022	admin     	Login		
+4/17/2022	admin     	SanPham	Xem	dgv_SanPham
+4/17/2022	admin     	Logout		
+4/17/2022	admin     	Login		
+4/17/2022	admin     	Login		
+4/17/2022	admin     	SanPham	Xem	dgv_SanPham
+4/21/2022	admin     	Login		
+4/21/2022	admin     	Login		
+4/21/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	SanPham	Sua	thẻ nhớ 8gb 
+4/22/2022	admin     	SanPham	Sua	thẻ nhớ 8gb 
+4/22/2022	admin     	SanPham	Xoa	SP019
+4/22/2022	admin     	SanPham	Sua	Vsmart joy 3
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Logout		
+4/22/2022	huy       	Login		
+4/22/2022	huy       	SanPham	Xem	dgv_SanPham
+4/22/2022	huy       	Logout		
+4/22/2022	khoa      	Login		
+4/22/2022	khoa      	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	SanPham	Sua	SamSung Galaxy S8 plus
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Login		
+4/22/2022	admin     	SanPham	Xem	dgv_SanPham
+4/22/2022	admin     	Login		

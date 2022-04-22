@@ -246,6 +246,8 @@ namespace QuanLyCuaHangDienThoai
             txtusername.Text = row[6].ToString();
             txtpassword.Text = row[7].ToString();
             cmbLoaiNV.SelectedIndex = int.Parse(row[8].ToString());
+
+            txtMaNV.Enabled = false;
         }
 
         private void btnSua_Click(object sender, EventArgs e)

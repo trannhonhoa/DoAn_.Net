@@ -90,6 +90,14 @@ namespace QuanLyCuaHangDienThoai
                 dgKhachHang.Columns[3].HeaderText = "Điện Thoại";
                 dgKhachHang.Columns[3].Width = 150;
             }
+            if(khAction.Count > 0)
+            {
+                btnUndo.Enabled = true;
+            }
+            else
+            {
+                btnUndo.Enabled = false;
+            }
             
         }
 
@@ -103,6 +111,8 @@ namespace QuanLyCuaHangDienThoai
             txtTenKH.Text = row[1].ToString();
             txtDiaChi.Text = row[2].ToString();
             txtDienThoai.Text = row[3].ToString();
+
+            txtMaKH.Enabled = false;
         }
 
         private void btnThemMoi_Click(object sender, EventArgs e)

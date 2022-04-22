@@ -154,9 +154,6 @@
   <data name="2Sua" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2Sua.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="excel" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\excel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -168,6 +165,9 @@
   </data>
   <data name="wp2848527" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wp2848527.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="hoadon" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\hoadon.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="phone1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\phone1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -202,6 +202,9 @@
   <data name="48px-Crystal_Clear_action_stop" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\48px-Crystal_Clear_action_stop.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="XoaH" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\XoaH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="customers" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\customers.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -211,20 +214,29 @@
   <data name="5g-1" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\5g-1.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="thanh toan" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thanh toan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="3Xoa" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\3Xoa.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="background-2579719_960_720" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\background-2579719_960_720.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="XoaH" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\XoaH.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="diagram_v2_02 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\diagram_v2_02 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="5e78affab2547d678e4c5458dd931381" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\5e78affab2547d678e4c5458dd931381.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\97460946-businessman-on-blurred-background-using-5g-network-with-mobile-phone-3d-rendering.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="icon-cancel-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icon-cancel-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="868681" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\868681.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="agt_update_product2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\agt_update_product2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -259,8 +271,8 @@
   <data name="invoice (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\invoice (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="thanh toan" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\thanh toan.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="restore" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\restore.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="Hinh" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Hinh.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -270,9 +282,6 @@
   </data>
   <data name="find (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\find (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="1437482686_sale-pointer" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\1437482686_sale-pointer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="undo (3)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\undo (3).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -298,10 +307,10 @@
   <data name="bg3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bg3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="diagram_v2_02 (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\diagram_v2_02 (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="1437482686_sale-pointer" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\1437482686_sale-pointer.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="5e78affab2547d678e4c5458dd931381" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\5e78affab2547d678e4c5458dd931381.gif;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="thongke" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\thongke.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

@@ -222,9 +222,10 @@ namespace QuanLyCuaHangDienThoai
             Application.Exit();
         }
 
-
-
-       
+        private void hỗTrợToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Help.ShowHelp(this, @"D:\heplerword\CHDTDD.chm");
+        }
     }
 }
  
