@@ -155,6 +155,9 @@ namespace QuanLyCuaHangDienThoai
             int dong = e.RowIndex;
             frmChiTietHoaDon fr = new frmChiTietHoaDon();
             fr.SoHD = dgHoaDon.Rows[dong].Cells[0].Value.ToString();
+            fr.per = per;
+            fr.userName = userName;
+            fr.manv = manv;
             this.Close();
             fr.Show();
         }

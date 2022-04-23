@@ -178,7 +178,7 @@
             // 
             this.hóaĐơnBánHàngToolStripMenuItem.Image = global::QuanLyCuaHangDienThoai.Properties.Resources.invoice;
             this.hóaĐơnBánHàngToolStripMenuItem.Name = "hóaĐơnBánHàngToolStripMenuItem";
-            this.hóaĐơnBánHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.hóaĐơnBánHàngToolStripMenuItem.Size = new System.Drawing.Size(176, 22);
             this.hóaĐơnBánHàngToolStripMenuItem.Text = "Hóa Đơn Bán Hàng";
             this.hóaĐơnBánHàngToolStripMenuItem.Click += new System.EventHandler(this.hóaĐơnBánHàngToolStripMenuItem_Click);
             // 
@@ -196,7 +196,7 @@
             // 
             this.khoHàngToolStripMenuItem.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._1437482150_corbeille_box_sale;
             this.khoHàngToolStripMenuItem.Name = "khoHàngToolStripMenuItem";
-            this.khoHàngToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.khoHàngToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.khoHàngToolStripMenuItem.Text = "Kho Hàng";
             this.khoHàngToolStripMenuItem.Click += new System.EventHandler(this.khoHàngToolStripMenuItem_Click);
             // 
@@ -204,7 +204,7 @@
             // 
             this.sảnPhẩmĐãBánToolStripMenuItem.Image = global::QuanLyCuaHangDienThoai.Properties.Resources._1;
             this.sảnPhẩmĐãBánToolStripMenuItem.Name = "sảnPhẩmĐãBánToolStripMenuItem";
-            this.sảnPhẩmĐãBánToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.sảnPhẩmĐãBánToolStripMenuItem.Size = new System.Drawing.Size(167, 22);
             this.sảnPhẩmĐãBánToolStripMenuItem.Text = "Sản Phẩm Đã Bán";
             this.sảnPhẩmĐãBánToolStripMenuItem.Click += new System.EventHandler(this.sảnPhẩmĐãBánToolStripMenuItem_Click);
             // 

@@ -24,7 +24,9 @@ namespace QuanLyCuaHangDienThoai
         CTHDB cthdb = new CTHDB();
         SanPham sp = new SanPham();
         public string SoHD { get; set; }
-       
+        public string userName { get; set; }
+        public string per { get; set; }
+        public string manv { get; set; }
         bool flagCheck;
         int pos = -1;
         private void frmChiTietHoaDon_Load(object sender, EventArgs e)
@@ -242,14 +244,14 @@ namespace QuanLyCuaHangDienThoai
 
         private void btnQuayLai_Click_1(object sender, EventArgs e)
         {
-            //frmHoaDonBan fr = new frmHoaDonBan();
-            //this.Close();
-            //fr.Show();
+            frmHoaDonBan fr = new frmHoaDonBan(per, userName, manv);
+            this.Close();
+            fr.Show();
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            frmReportHDB fr = new frmReportHDB();
+            frm_Master_HDB fr = new frm_Master_HDB();
             fr.MaHD = cmbSoHD.Text;
             fr.Show();
         }
