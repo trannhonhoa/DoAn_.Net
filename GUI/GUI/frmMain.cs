@@ -226,6 +226,11 @@ namespace QuanLyCuaHangDienThoai
         {
             Help.ShowHelp(this, @"D:\heplerword\CHDTDD.chm");
         }
+
+        private void lblDate_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
  

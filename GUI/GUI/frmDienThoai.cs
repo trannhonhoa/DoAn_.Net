@@ -243,7 +243,7 @@ namespace QuanLyCuaHangDienThoai
             else if (undoingDelete)
             {
                 sp.action = 1;
-                spAction.Add(sp);
+                //spAction.Add(sp);
                 bllsp.AddData(sp);
                 btnHuy.PerformClick();
             }

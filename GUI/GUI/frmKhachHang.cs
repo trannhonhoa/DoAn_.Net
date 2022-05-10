@@ -179,7 +179,7 @@ namespace QuanLyCuaHangDienThoai
                 try
                 {
                     kh.action = 1;
-                    khAction.Add(kh);
+                    //khAction.Add(kh);
                     bllkh.AddData(kh);
                     btnHuy.PerformClick();
                 }

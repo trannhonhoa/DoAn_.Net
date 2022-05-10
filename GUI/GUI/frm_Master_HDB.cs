@@ -19,6 +19,7 @@ namespace QuanLyCuaHangDienThoai
         public string MaHD { get; set; }
         private void frm_Master_HDB_Load(object sender, EventArgs e)
         {
+            mahdToolStripTextBox.Text = MaHD;
             // TODO: This line of code loads data into the 'dataSet_Master_HDB.DataTable1' table. You can move, or remove it, as needed.
             this.dataTable1TableAdapter.Fill(this.dataSet_Master_HDB.DataTable1, MaHD);
 
@@ -29,7 +30,9 @@ namespace QuanLyCuaHangDienThoai
         {
             try
             {
+                
                 this.dataTable1TableAdapter.Fill(this.dataSet_Master_HDB.DataTable1, mahdToolStripTextBox.Text);
+                this.reportViewer1.RefreshReport();
             }
             catch (System.Exception ex)
             {

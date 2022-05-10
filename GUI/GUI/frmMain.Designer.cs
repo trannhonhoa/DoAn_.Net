@@ -232,6 +232,7 @@
             this.lblDate.Name = "lblDate";
             this.lblDate.Size = new System.Drawing.Size(96, 21);
             this.lblDate.Text = "Ngày tháng năm";
+            this.lblDate.Click += new System.EventHandler(this.lblDate_Click);
             // 
             // progressBarPercent
             // 
