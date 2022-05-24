@@ -506,3 +506,15 @@
 5/10/2022	admin     	SanPham	Them	hfsuhfujs
 5/10/2022	admin     	SanPham	Xoa	SP014
 5/10/2022	admin     	SanPham	Xoa	SP013
+5/20/2022	admin     	Login		
+5/20/2022	admin     	Logout		
+5/20/2022	admin     	Login		
+5/20/2022	admin     	SanPham	Xem	dgv_SanPham
+5/20/2022	admin     	SanPham	Sua	Oppo F5 
+5/20/2022	admin     	SanPham	Sua	Sạc Oppo
+5/20/2022	admin     	SanPham	Sua	Sạc Iphone
+5/20/2022	admin     	SanPham	Them	IPhone 14
+5/20/2022	admin     	SanPham	Xem	dgv_SanPham
+5/20/2022	admin     	SanPham	Xoa	SP015
+5/20/2022	admin     	SanPham	Xoa	SP014
+5/20/2022	admin     	SanPham	Xoa	SP013
